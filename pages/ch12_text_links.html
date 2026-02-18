@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 12: HTML Text Links | Ashish Lab</title>
+    
+    <link rel="stylesheet" href="../style.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Fira+Code&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">
+            <a href="../index.html"><i class="fa-brands fa-html5"></i> Ashish<span>Lab</span></a>
+        </div>
+        <div class="menu-toggle" id="mobile-menu">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+        <ul class="nav-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="ch13_image_links.html" class="btn">Next Chapter <i class="fa-solid fa-arrow-right"></i></a></li>
+        </ul>
+    </nav>
+
+    <div class="chapter-layout">
+        
+        <aside class="sidebar">
+            <h3>Course Index</h3>
+            <ul style="max-height: 70vh; overflow-y: auto; padding-right: 5px;">
+                <li><a href="ch1_intro.html"><i class="fa-solid fa-check"></i> Ch 1: Overview</a></li>
+                <li><a href="ch2_basic_tags.html"><i class="fa-solid fa-check"></i> Ch 2: Basic Tags</a></li>
+                <li><a href="ch3_elements.html"><i class="fa-solid fa-check"></i> Ch 3: Elements</a></li>
+                <li><a href="ch4_attributes.html"><i class="fa-solid fa-check"></i> Ch 4: Attributes</a></li>
+                <li><a href="ch5_formatting.html"><i class="fa-solid fa-check"></i> Ch 5: Formatting</a></li>
+                <li><a href="ch6_phrase_tags.html"><i class="fa-solid fa-check"></i> Ch 6: Phrase Tags</a></li>
+                <li><a href="ch7_meta_tags.html"><i class="fa-solid fa-check"></i> Ch 7: Meta Tags</a></li>
+                <li><a href="ch8_comments.html"><i class="fa-solid fa-check"></i> Ch 8: Comments</a></li>
+                <li><a href="ch9_images.html"><i class="fa-solid fa-check"></i> Ch 9: Images</a></li>
+                <li><a href="ch10_tables.html"><i class="fa-solid fa-check"></i> Ch 10: Tables</a></li>
+                <li><a href="ch11_lists.html"><i class="fa-solid fa-check"></i> Ch 11: Lists</a></li>
+                <li><a href="ch12_text_links.html" class="active"><i class="fa-solid fa-circle-check"></i> Ch 12: Text Links</a></li>
+                <li><a href="ch13_image_links.html">Ch 13: Image Maps</a></li>
+                <li><a href="ch14_email_links.html">Ch 14: Email Links</a></li>
+                <li><a href="ch15_frames.html">Ch 15: Frames</a></li>
+                <li><a href="ch16_iframes.html">Ch 16: Iframes</a></li>
+                <li><a href="ch17_blocks.html">Ch 17: Div & Span</a></li>
+                <li><a href="ch18_backgrounds.html">Ch 18: Backgrounds</a></li>
+                <li><a href="ch19_colors.html">Ch 19: Color Models</a></li>
+                <li><a href="ch20_fonts.html">Ch 20: Fonts</a></li>
+                <li><a href="ch21_forms.html">Ch 21: Forms</a></li>
+                <li><a href="ch22_multimedia.html">Ch 22: Multimedia</a></li>
+                <li><a href="ch23_marquee.html">Ch 23: Marquee</a></li>
+                <li><a href="ch24_header.html">Ch 24: Header Tags</a></li>
+                <li><a href="ch25_css.html">Ch 25: CSS Setup</a></li>
+                <li><a href="ch26_javascript.html">Ch 26: JavaScript</a></li>
+                <li><a href="ch27_layout.html">Ch 27: Layouts</a></li>
+                <li><a href="ch28_mouse_events.html">Ch 28: Mouse Events</a></li>
+                <li><a href="ch29_window_events.html">Ch 29: Window Events</a></li>
+                <li><a href="ch30_form_events.html">Ch 30: Form Events</a></li>
+                <li><a href="ch31_hardware_events.html">Ch 31: Hardware</a></li>
+                <li><a href="ch32_entities.html">Ch 32: Entities</a></li>
+                <li><a href="ch33_url_encoding.html">Ch 33: URL Encode</a></li>
+                <li><a href="ch34_lang_codes.html">Ch 34: Lang Codes</a></li>
+                <li><a href="ch35_char_sets.html">Ch 35: Char Sets</a></li>
+                <li><a href="ch36_http_status.html">Ch 36: HTTP Status</a></li>
+                <li><a href="ch37_mime_types.html">Ch 37: MIME Types</a></li>
+                <li><a href="ch38_deprecated.html">Ch 38: Deprecated</a></li>
+            </ul>
+        </aside>
+
+        <main class="content-area">
+            
+            <h1>🔗 Chapter 12: HTML Text Links</h1>
+            <p>Text links ko <strong>Hyperlinks</strong> bhi kehte hain. Inka kaam user ko ek page se doosre page par le jana hai.</p>
+            
+            <hr style="margin: 2rem 0; border: 0; border-top: 1px solid #eee;">
+
+            <h2>1. Anchor Tag Basics (&lt;a&gt;)</h2>
+            <p>Hyperlink banane ke liye <code>&lt;a&gt;</code> (Anchor) tag ka use hota hai. Iska sabse zaroori attribute <strong>href</strong> (Hypertext Reference) hai.</p>
+            
+            <div class="note-box">
+                <p><strong>Target Attribute:</strong> Ye batata hai ki link kahan khulega:</p>
+                <ul>
+                    <li><code>target="_self"</code>: Usi tab mein (Default).</li>
+                    <li><code>target="_blank"</code>: Naye tab mein.</li>
+                </ul>
+            </div>
+
+            <div style="background: #1e293b; color: #e2e8f0; padding: 15px; border-radius: 8px; font-family: 'Fira Code', monospace;">
+&lt;a href="https://google.com" target="_blank"&gt;Google par jayein&lt;/a&gt;
+&lt;a href="about.html" target="_self"&gt;About Us&lt;/a&gt;
+            </div>
+
+            <h2>2. Internal Linking (Bookmarks)</h2>
+            <p>Agar aapka page bahut lamba hai aur aap chahte hain ki user ek click par page ke kisi khaas hisse (jaise Footer) par pahunch jaye, toh hum <strong>ID Selector</strong> ka use karte hain.</p>
+            
+            <ul style="list-style: none; padding: 0;">
+                <li style="margin-bottom: 10px;">Step 1: Jis jagah jana hai wahan <code>id="contact"</code> lagayein.</li>
+                <li style="margin-bottom: 10px;">Step 2: Link mein <code>href="#contact"</code> likhein.</li>
+            </ul>
+
+            <div style="background: #1e293b; color: #e2e8f0; padding: 15px; border-radius: 8px; font-family: 'Fira Code', monospace;">
+&lt;a href="#contact"&gt;Contact par Jayein&lt;/a&gt;
+... (Bahut sara content) ...
+&lt;h2 id="contact"&gt;Contact Info&lt;/h2&gt;
+            </div>
+
+            <h2>3. Download Links</h2>
+            <p>Agar aap chahte hain ki link par click karte hi koi file (PDF, Image, Zip) download ho jaye, toh <code>download</code> attribute ka use hota hai.</p>
+
+            <div style="background: #1e293b; color: #e2e8f0; padding: 15px; border-radius: 8px; font-family: 'Fira Code', monospace;">
+&lt;a href="notes.pdf" download&gt;Download Python Notes&lt;/a&gt;
+            </div>
+
+            <h2 style="margin-top: 3rem; color: var(--primary);">📝 Practice Exercise: All Link Types</h2>
+            <p>Is code ko <strong>Run</strong> karein. "Jump to Footer" par click karke dekhein ki page kaise scroll hota hai.</p>
+
+            <div class="live-editor">
+                <div class="editor-header">
+                    <span><i class="fa-solid fa-code"></i> Live Practice</span>
+                    <div class="editor-controls">
+                        <button class="btn-copy" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Copy</button>
+                        <button class="btn-run" onclick="runCode(this)"><i class="fa-solid fa-play"></i> Run</button>
+                    </div>
+                </div>
+                
+                <textarea class="code-input" spellcheck="false">
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Link Types Demo</h2>
+
+<p>
+    External: <a href="https://www.google.com" target="_blank">Google Kholein (New Tab)</a>
+</p>
+
+<p>
+    Internal: <a href="#footer">Niche Jayein (Jump to Footer)</a>
+</p>
+
+<div style="height: 400px; background: #f3f4f6; padding: 20px; border: 1px dashed #ccc; overflow: hidden;">
+    (Yahan bahut sara content hai... Scroll karke niche dekhein ya link par click karein)
+    <br><br>
+    ... Scrolling ...
+    <br><br>
+    ... Scrolling ...
+</div>
+
+<h3 id="footer" style="color: blue;">Ye Footer Hai!</h3>
+<p>Aap link par click karke yahan pahunch gaye.</p>
+<a href="#">Wapas Upar Jayein (Top)</a>
+
+</body>
+</html>
+                </textarea>
+
+                <div class="output-label">OUTPUT (Result)</div>
+                <iframe class="code-output"></iframe>
+            </div>
+
+            <div style="background: #1e293b; color: #fff; padding: 20px; border-radius: 12px; margin-top: 30px;">
+                <h3 style="color: white; margin-bottom: 15px;">💡 Summary Table</h3>
+                
+                <table style="width: 100%; color: #fff; background: transparent; box-shadow: none; border: none;">
+                    <thead style="background: rgba(255,255,255,0.1);">
+                        <tr>
+                            <th style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.2); background: transparent; color: #fff;">Attribute</th>
+                            <th style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.2); background: transparent; color: #fff;">Purpose</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.1);"><code>href</code></td>
+                            <td style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.1);">Destination URL (Kahan jana hai).</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.1);"><code>target="_blank"</code></td>
+                            <td style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.1);">Link naye tab mein khulta hai.</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.1);"><code>id="name"</code></td>
+                            <td style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.1);">Internal jumping ke liye Nishan (Target).</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.1);"><code>download</code></td>
+                            <td style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.1);">File download karwane ke liye.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+           <div class="chapter-nav">
+    <a href="ch11_lists.html" class="btn secondary">&larr; Prev</a>
+
+    <a href="ch13_image_links.html" class="btn">Next &rarr;</a>
+</div>
+
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Ashish Code Lab. Made with ❤️ in Mau, UP.</p>
+    </footer>
+
+    <script src="../script.js"></script>
+
+</body>
+</html>

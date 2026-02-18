@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 36: HTTP Status Messages | Ashish Lab</title>
+    
+    <link rel="stylesheet" href="../style.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Fira+Code&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">
+            <a href="../index.html"><i class="fa-brands fa-html5"></i> Ashish<span>Lab</span></a>
+        </div>
+         <div class="menu-toggle" id="mobile-menu">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+        <ul class="nav-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="ch37_mime_types.html" class="btn">Next Chapter <i class="fa-solid fa-arrow-right"></i></a></li>
+        </ul>
+    </nav>
+
+    <div class="chapter-layout">
+        
+        <aside class="sidebar">
+            <h3>Course Index</h3>
+            <ul style="max-height: 70vh; overflow-y: auto; padding-right: 5px;">
+                <li><a href="ch1_intro.html"><i class="fa-solid fa-check"></i> Ch 1: Overview</a></li>
+                <li><a href="ch2_basic_tags.html"><i class="fa-solid fa-check"></i> Ch 2: Basic Tags</a></li>
+                <li><a href="ch3_elements.html"><i class="fa-solid fa-check"></i> Ch 3: Elements</a></li>
+                <li><a href="ch4_attributes.html"><i class="fa-solid fa-check"></i> Ch 4: Attributes</a></li>
+                <li><a href="ch5_formatting.html"><i class="fa-solid fa-check"></i> Ch 5: Formatting</a></li>
+                <li><a href="ch6_phrase_tags.html"><i class="fa-solid fa-check"></i> Ch 6: Phrase Tags</a></li>
+                <li><a href="ch7_meta_tags.html"><i class="fa-solid fa-check"></i> Ch 7: Meta Tags</a></li>
+                <li><a href="ch8_comments.html"><i class="fa-solid fa-check"></i> Ch 8: Comments</a></li>
+                <li><a href="ch9_images.html"><i class="fa-solid fa-check"></i> Ch 9: Images</a></li>
+                <li><a href="ch10_tables.html"><i class="fa-solid fa-check"></i> Ch 10: Tables</a></li>
+                <li><a href="ch11_lists.html"><i class="fa-solid fa-check"></i> Ch 11: Lists</a></li>
+                <li><a href="ch12_text_links.html"><i class="fa-solid fa-check"></i> Ch 12: Text Links</a></li>
+                <li><a href="ch13_image_links.html"><i class="fa-solid fa-check"></i> Ch 13: Image Maps</a></li>
+                <li><a href="ch14_email_links.html"><i class="fa-solid fa-check"></i> Ch 14: Email Links</a></li>
+                <li><a href="ch15_frames.html"><i class="fa-solid fa-check"></i> Ch 15: Frames</a></li>
+                <li><a href="ch16_iframes.html"><i class="fa-solid fa-check"></i> Ch 16: Iframes</a></li>
+                <li><a href="ch17_blocks.html"><i class="fa-solid fa-check"></i> Ch 17: Div & Span</a></li>
+                <li><a href="ch18_backgrounds.html"><i class="fa-solid fa-check"></i> Ch 18: Backgrounds</a></li>
+                <li><a href="ch19_colors.html"><i class="fa-solid fa-check"></i> Ch 19: Color Models</a></li>
+                <li><a href="ch20_fonts.html"><i class="fa-solid fa-check"></i> Ch 20: Fonts</a></li>
+                <li><a href="ch21_forms.html"><i class="fa-solid fa-check"></i> Ch 21: Forms</a></li>
+                <li><a href="ch22_multimedia.html"><i class="fa-solid fa-check"></i> Ch 22: Multimedia</a></li>
+                <li><a href="ch23_marquee.html"><i class="fa-solid fa-check"></i> Ch 23: Marquee</a></li>
+                <li><a href="ch24_header.html"><i class="fa-solid fa-check"></i> Ch 24: Header Tags</a></li>
+                <li><a href="ch25_css.html"><i class="fa-solid fa-check"></i> Ch 25: CSS Setup</a></li>
+                <li><a href="ch26_javascript.html"><i class="fa-solid fa-check"></i> Ch 26: JavaScript</a></li>
+                <li><a href="ch27_layout.html"><i class="fa-solid fa-check"></i> Ch 27: Layouts</a></li>
+                <li><a href="ch28_mouse_events.html"><i class="fa-solid fa-check"></i> Ch 28: Mouse Events</a></li>
+                <li><a href="ch29_window_events.html"><i class="fa-solid fa-check"></i> Ch 29: Window Events</a></li>
+                <li><a href="ch30_form_events.html"><i class="fa-solid fa-check"></i> Ch 30: Form Events</a></li>
+                <li><a href="ch31_hardware_events.html"><i class="fa-solid fa-check"></i> Ch 31: Hardware</a></li>
+                <li><a href="ch32_entities.html"><i class="fa-solid fa-check"></i> Ch 32: Entities</a></li>
+                <li><a href="ch33_url_encoding.html"><i class="fa-solid fa-check"></i> Ch 33: URL Encode</a></li>
+                <li><a href="ch34_lang_codes.html"><i class="fa-solid fa-check"></i> Ch 34: Lang Codes</a></li>
+                <li><a href="ch35_char_sets.html"><i class="fa-solid fa-check"></i> Ch 35: Char Sets</a></li>
+                <li><a href="ch36_http_status.html" class="active"><i class="fa-solid fa-circle-check"></i> Ch 36: HTTP Status</a></li>
+                <li><a href="ch37_mime_types.html">Ch 37: MIME Types</a></li>
+                <li><a href="ch38_deprecated.html">Ch 38: Deprecated</a></li>
+            </ul>
+        </aside>
+
+        <main class="content-area">
+            
+            <h1>📶 Chapter 36: HTTP Status Messages</h1>
+            <p>Jab aap browser mein link kholte hain, toh server ek numerical code bhejta hai. In codes ko 5 main categories mein baanta gaya hai:</p>
+            
+            <hr style="margin: 2rem 0; border: 0; border-top: 1px solid #eee;">
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-bottom: 30px;">
+                <div style="background: #f0fdf4; border: 1px solid #bbf7d0; padding: 15px; border-radius: 8px;">
+                    <h4 style="color: #166534; margin: 0;">2xx (Success)</h4>
+                    <p style="font-size: 0.85rem; margin-top: 5px;">✅ Sab Badhiya hai.</p>
+                </div>
+                <div style="background: #fefce8; border: 1px solid #fef08a; padding: 15px; border-radius: 8px;">
+                    <h4 style="color: #854d0e; margin: 0;">3xx (Redirection)</h4>
+                    <p style="font-size: 0.85rem; margin-top: 5px;">➡️ Jagah badal gayi hai.</p>
+                </div>
+                <div style="background: #fff1f2; border: 1px solid #fecaca; padding: 15px; border-radius: 8px;">
+                    <h4 style="color: #991b1b; margin: 0;">4xx (Client Error)</h4>
+                    <p style="font-size: 0.85rem; margin-top: 5px;">❌ Aapki galti (User).</p>
+                </div>
+                <div style="background: #fef2f2; border: 1px solid #fee2e2; padding: 15px; border-radius: 8px; border-left: 4px solid red;">
+                    <h4 style="color: #991b1b; margin: 0;">5xx (Server Error)</h4>
+                    <p style="font-size: 0.85rem; margin-top: 5px;">🔥 Server crash ho gaya.</p>
+                </div>
+            </div>
+
+            
+
+            <h2>Common Status Codes</h2>
+            
+            <h3>1. 200 OK ✅</h3>
+            <p>Matlab: "Aapne jo maanga tha, wo mil gaya aur maine bhej diya." Ye hamesha background mein chalta hai par dikhta nahi.</p>
+
+            <h3>2. 404 Not Found ❌</h3>
+            <p>Sabse mashhoor error. Iska matlab hai ki server toh chal raha hai, par aapka maanga hua <strong>Page/File</strong> wahan nahi hai.</p>
+            
+            <h3>3. 500 Internal Server Error 🔥</h3>
+            <p>Matlab: "Server ka code phat gaya hai." Ye developers ke liye sabse bura error hai kyunki ye poori tarah unki galti hai.</p>
+
+            <h2 style="margin-top: 3rem; color: var(--primary);">📝 Live Practice: Status Simulator</h2>
+            <p>Niche ke buttons par click karke dekhein ki har status code ka kya matlab hota hai.</p>
+
+            <div class="live-editor">
+                <div class="editor-header">
+                    <span><i class="fa-solid fa-code"></i> Live HTTP Demo</span>
+                    <div class="editor-controls">
+                        <button class="btn-copy" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Copy</button>
+                        <button class="btn-run" onclick="runCode(this)"><i class="fa-solid fa-play"></i> Run</button>
+                    </div>
+                </div>
+                
+                <textarea class="code-input" spellcheck="false">
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  .btn-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  button { padding: 10px; cursor: pointer; border: none; border-radius: 5px; color: white; font-weight: bold; }
+  #status-box { margin-top: 20px; padding: 20px; border-radius: 10px; text-align: center; font-family: sans-serif; }
+</style>
+</head>
+<body>
+
+    <h3>HTTP Status Simulator</h3>
+    <div class="btn-grid">
+        <button style="background: #22c55e;" onclick="show(200, 'Sab Badhiya hai! Page successfully load ho gaya.')">Code 200</button>
+        <button style="background: #f59e0b;" onclick="show(403, 'Forbidden: Aapko yahan aane ki permission nahi hai! 🔒')">Code 403</button>
+        <button style="background: #ef4444;" onclick="show(404, 'Not Found: Ye page delete ho gaya hai ya galat link hai. ❌')">Code 404</button>
+        <button style="background: #b91c1c;" onclick="show(500, 'Server Error: Code mein galti hai, server crash ho gaya! 🔥')">Code 500</button>
+    </div>
+
+    <div id="status-box" style="background: #eee; color: #333;">
+        Click a button to see status meaning.
+    </div>
+
+    <script>
+        function show(code, msg) {
+            var box = document.getElementById('status-box');
+            box.innerHTML = "<h1>" + code + "</h1><p>" + msg + "</p>";
+            box.style.backgroundColor = (code == 200) ? "#dcfce7" : "#fee2e2";
+        }
+    </script>
+
+</body>
+</html>
+                </textarea>
+
+                <div class="output-label">OUTPUT (Result)</div>
+                <iframe class="code-output"></iframe>
+            </div>
+
+            <div style="background: #1e293b; color: #fff; padding: 20px; border-radius: 12px; margin-top: 30px;">
+                <h3 style="color: white; margin-bottom: 15px;">📊 Quick Cheat Sheet</h3>
+                
+                <table style="width: 100%; color: #fff; background: transparent; box-shadow: none; border: none;">
+                    <thead style="background: rgba(255,255,255,0.1);">
+                        <tr>
+                            <th style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.2); background: transparent; color: #fff;">Code</th>
+                            <th style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.2); background: transparent; color: #fff;">Status</th>
+                            <th style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.2); background: transparent; color: #fff;">Kiski Galti?</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.1);">200</td>
+                            <td style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.1);">OK (Success)</td>
+                            <td style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.1);">N/A ✅</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.1);">403</td>
+                            <td style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.1);">Forbidden (Locked)</td>
+                            <td style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.1);">Permission Issue</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.1);">404</td>
+                            <td style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.1);">Not Found</td>
+                            <td style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.1);">User (Galat Link)</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.1);">500</td>
+                            <td style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.1);">Server Error</td>
+                            <td style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.1);">Developer 🔥</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+           <div class="chapter-nav">
+    <a href="ch35_char_sets.html" class="btn secondary">&larr; Prev</a>
+
+    <a href="ch37_mime_types.html" class="btn">Next &rarr;</a>
+</div>
+
+        </main>
+    </div>
+
+    <script src="../script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <title>Course Completed | Ashish Lab</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Pinyon+Script&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            margin: 0; padding: 0;
+            background: #f3f4f6;
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* --- Navbar --- */
+        .navbar {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 50px;
+            background-color: #ffffff;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+        }
+        .logo a { text-decoration: none; font-size: 1.8rem; font-weight: 700; color: #1e293b; display: flex; align-items: center; gap: 10px; }
+        .logo i { color: #e34c26; }
+        .logo span { color: #4f46e5; }
+        .nav-links { list-style: none; display: flex; gap: 30px; }
+        .nav-links a.btn { background: #4f46e5; color: white; padding: 10px 25px; border-radius: 50px; text-decoration: none; }
+
+        /* --- Container --- */
+        .page-container {
+            display: flex; flex-direction: column; align-items: center; padding: 40px 20px;
+        }
+        .heading { color: #166534; font-size: 2rem; margin-bottom: 30px; }
+
+        /* --- CERTIFICATE DESIGN --- */
+        .certificate {
+            width: 1000px; /* Wide Landscape Width */
+            height: 700px; /* Standard Landscape Height */
+            background: #fff;
+            position: relative;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+            padding: 50px;
+            overflow: hidden;
+            border: 15px solid #fff;
+            outline: 5px solid #d4af37; /* Gold Outline */
+            background-image: url('https://www.transparenttextures.com/patterns/cream-paper.png');
+        }
+
+        /* 1. Hanging Ribbon (Black Strip) */
+        .hanging-ribbon {
+            position: absolute;
+            top: -20px;
+            left: 80px;
+            width: 90px;
+            height: 450px;
+            background: #1a1a1a;
+            border-left: 3px solid #d4af37;
+            border-right: 3px solid #d4af37;
+            z-index: 1;
+            box-shadow: 5px 0 15px rgba(0,0,0,0.3);
+        }
+        .hanging-ribbon::after {
+            content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 40px;
+            background: #fff; clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+        }
+
+        /* 2. Gold Badge */
+        .gold-badge {
+            position: absolute;
+            top: 320px; left: 125px; /* Centered on ribbon */
+            transform: translate(-50%, -50%);
+            width: 130px; height: 130px;
+            background: radial-gradient(circle, #fceeb5 0%, #d4af37 100%);
+            border-radius: 50%;
+            border: 5px solid #fff;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 50px; color: #fff; z-index: 2;
+        }
+        /* Ribbon Tails behind Badge */
+        .ribbon-tail {
+            position: absolute; top: 340px; width: 40px; height: 80px;
+            background: #1a1a1a; border: 1px solid #d4af37; z-index: 0;
+        }
+        .tail-left { left: 85px; transform: rotate(25deg); }
+        .tail-right { left: 125px; transform: rotate(-25deg); }
+
+        /* --- Content --- */
+        .cert-content {
+            margin-left: 150px; /* Space to avoid ribbon */
+            text-align: center;
+            height: 100%;
+            display: flex; flex-direction: column; justify-content: center;
+        }
+
+        .c-title {
+            font-family: 'Playfair Display', serif; font-size: 4.5rem; color: #333;
+            text-transform: uppercase; letter-spacing: 5px; margin: 0;
+        }
+        .c-subtitle {
+            font-family: 'Poppins', sans-serif; font-size: 1.5rem; letter-spacing: 8px;
+            color: #d4af37; margin-bottom: 50px; text-transform: uppercase; font-weight: 600;
+        }
+        .c-present { font-size: 1.2rem; color: #666; text-transform: uppercase; letter-spacing: 2px; }
+        
+        /* Editable Name */
+        .c-name {
+            font-family: 'Pinyon Script', cursive; font-size: 5.5rem; color: #1a1a1a;
+            margin: 10px 0 30px 0; border-bottom: 2px solid #d4af37;
+            display: inline-block; padding: 0 50px; min-width: 400px;
+        }
+
+        .c-desc {
+            font-family: 'Playfair Display', serif; color: #555; font-size: 1.2rem;
+            line-height: 1.8; margin: 0 auto 60px auto; max-width: 85%;
+        }
+
+        /* Signatures */
+        .signatures { display: flex; justify-content: space-around; padding: 0 80px; }
+        .sig-box { text-align: center; width: 220px; }
+        .sig-text { font-family: 'Pinyon Script', cursive; font-size: 2.5rem; color: #1a1a1a; }
+        .sig-line { height: 2px; background: #333; margin: 5px 0; }
+        .sig-label { font-size: 1rem; color: #1a1a1a; font-family: 'Playfair Display', serif; }
+
+        /* Buttons */
+        .action-buttons { margin-top: 30px; display: flex; gap: 20px; }
+        .btn { padding: 15px 30px; border-radius: 30px; font-weight: bold; cursor: pointer; border: none; font-size: 1rem; }
+
+        /* --- 🖨️ PRINT SETTINGS (The Magic Part) --- */
+        @media print {
+            @page {
+                size: landscape; /* Auto Landscape */
+                margin: 0; /* Remove default page margins */
+            }
+            body { 
+                background: white; 
+                -webkit-print-color-adjust: exact; /* Force colors */
+                print-color-adjust: exact;
+                margin: 0; padding: 0;
+                display: block; /* Reset flex */
+            }
+            .navbar, .heading, .action-buttons { display: none !important; } /* Hide Extras */
+            
+            .page-container {
+                padding: 0; margin: 0; width: 100vw; height: 100vh;
+                display: flex; align-items: center; justify-content: center;
+            }
+            
+            .certificate {
+                box-shadow: none;
+                margin: 0;
+                /* Scale to fit A4 Landscape if needed, or stick to 100% */
+                width: 100%;
+                height: 100%;
+                border: none;
+                outline: 10px solid #d4af37; /* Thick gold border on print */
+            }
+        }
+    </style>
+</head>
+<body onload="launchConfetti()">
+
+    <nav class="navbar">
+        <div class="logo">
+            <a href="../index.html"><i class="fa-brands fa-html5"></i> Ashish<span>Lab</span></a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="../index.html" class="btn">Finish Course</a></li>
+        </ul>
+    </nav>
+
+    <div class="page-container">
+        <h1 class="heading">🎉 Congratulations! आपका सर्टिफिकेट तैयार है</h1>
+
+        <div class="certificate">
+            <div class="hanging-ribbon"></div>
+            <div class="ribbon-tail tail-left"></div>
+            <div class="ribbon-tail tail-right"></div>
+            <div class="gold-badge">★</div>
+
+            <div class="cert-content">
+                <h1 class="c-title">Certificate</h1>
+                <div class="c-subtitle">Of Participation</div>
+
+                <p class="c-present">This certificate is proudly presented to</p>
+
+                <div class="c-name" contenteditable="true" spellcheck="false">Student Name</div>
+
+                <p class="c-desc">
+                    For successfully completing the <strong>HTML Master Course</strong> curriculum covering 38 chapters of web structure and development at <strong>Ashish Code Lab</strong>.
+                </p>
+
+                <div class="signatures">
+                    <div class="sig-box">
+                        <div class="sig-text">Ashish Kumar</div>
+                        <div class="sig-line"></div>
+                        <div class="sig-label">Ashish Kumar</div>
+                    </div>
+                    <div class="sig-box">
+                        <div class="sig-text" id="date">Date</div>
+                        <div class="sig-line"></div>
+                        <div class="sig-label">Date</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="action-buttons">
+            <a href="../index.html" class="btn" style="background: #166534; color: white; text-decoration: none;">
+                Back to Home
+            </a>
+            <button onclick="window.print()" class="btn" style="background: #1e293b; color: #d4af37; border: 2px solid #d4af37;">
+                Download / Print PDF
+            </button>
+        </div>
+    </div>
+
+    <script>
+        const d = new Date();
+        document.getElementById("date").innerText = d.toLocaleDateString();
+
+        function launchConfetti() {
+            var end = Date.now() + (2 * 1000);
+            (function frame() {
+                confetti({ particleCount: 5, angle: 60, spread: 55, origin: { x: 0 }, colors: ['#d4af37', '#1a1a1a'] });
+                confetti({ particleCount: 5, angle: 120, spread: 55, origin: { x: 1 }, colors: ['#d4af37', '#1a1a1a'] });
+                if (Date.now() < end) { requestAnimationFrame(frame); }
+            }());
+        }
+    </script>
+</body>
+</html>

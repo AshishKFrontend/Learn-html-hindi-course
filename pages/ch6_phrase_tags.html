@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="hi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 6: Phrase Tags | Ashish Lab</title>
+
+    <link rel="stylesheet" href="../style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Fira+Code&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="logo">
+            <a href="../index.html"><i class="fa-brands fa-html5"></i> Ashish<span>Lab</span></a>
+        </div>
+        <div class="menu-toggle" id="mobile-menu">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+        <ul class="nav-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="ch7_meta_tags.html" class="btn">Next Chapter <i class="fa-solid fa-arrow-right"></i></a></li>
+        </ul>
+    </nav>
+
+    <div class="chapter-layout">
+
+        <aside class="sidebar">
+            <h3>Course Index</h3>
+            <ul style="max-height: 70vh; overflow-y: auto; padding-right: 5px;">
+                <li><a href="ch1_intro.html"><i class="fa-solid fa-check"></i> Ch 1: Overview</a></li>
+                <li><a href="ch2_basic_tags.html"><i class="fa-solid fa-check"></i> Ch 2: Basic Tags</a></li>
+                <li><a href="ch3_elements.html"><i class="fa-solid fa-check"></i> Ch 3: Elements</a></li>
+                <li><a href="ch4_attributes.html"><i class="fa-solid fa-check"></i> Ch 4: Attributes</a></li>
+                <li><a href="ch5_formatting.html"><i class="fa-solid fa-check"></i> Ch 5: Formatting</a></li>
+                <li><a href="ch6_phrase_tags.html" class="active"><i class="fa-solid fa-circle-check"></i> Ch 6: Phrase
+                        Tags</a></li>
+                <li><a href="ch7_meta_tags.html">Ch 7: Meta Tags</a></li>
+                <li><a href="ch8_comments.html">Ch 8: Comments</a></li>
+                <li><a href="ch9_images.html">Ch 9: Images</a></li>
+                <li><a href="ch10_tables.html">Ch 10: Tables</a></li>
+                <li><a href="ch11_lists.html">Ch 11: Lists</a></li>
+                <li><a href="ch12_text_links.html">Ch 12: Text Links</a></li>
+                <li><a href="ch13_image_links.html">Ch 13: Image Maps</a></li>
+                <li><a href="ch14_email_links.html">Ch 14: Email Links</a></li>
+                <li><a href="ch15_frames.html">Ch 15: Frames</a></li>
+                <li><a href="ch16_iframes.html">Ch 16: Iframes</a></li>
+                <li><a href="ch17_blocks.html">Ch 17: Div & Span</a></li>
+                <li><a href="ch18_backgrounds.html">Ch 18: Backgrounds</a></li>
+                <li><a href="ch19_colors.html">Ch 19: Color Models</a></li>
+                <li><a href="ch20_fonts.html">Ch 20: Fonts</a></li>
+                <li><a href="ch21_forms.html">Ch 21: Forms</a></li>
+                <li><a href="ch22_multimedia.html">Ch 22: Multimedia</a></li>
+                <li><a href="ch23_marquee.html">Ch 23: Marquee</a></li>
+                <li><a href="ch24_header.html">Ch 24: Header Tags</a></li>
+                <li><a href="ch25_css.html">Ch 25: CSS Setup</a></li>
+                <li><a href="ch26_javascript.html">Ch 26: JavaScript</a></li>
+                <li><a href="ch27_layout.html">Ch 27: Layouts</a></li>
+                <li><a href="ch28_mouse_events.html">Ch 28: Mouse Events</a></li>
+                <li><a href="ch29_window_events.html">Ch 29: Window Events</a></li>
+                <li><a href="ch30_form_events.html">Ch 30: Form Events</a></li>
+                <li><a href="ch31_hardware_events.html">Ch 31: Hardware</a></li>
+                <li><a href="ch32_entities.html">Ch 32: Entities</a></li>
+                <li><a href="ch33_url_encoding.html">Ch 33: URL Encode</a></li>
+                <li><a href="ch34_lang_codes.html">Ch 34: Lang Codes</a></li>
+                <li><a href="ch35_char_sets.html">Ch 35: Char Sets</a></li>
+                <li><a href="ch36_http_status.html">Ch 36: HTTP Status</a></li>
+                <li><a href="ch37_mime_types.html">Ch 37: MIME Types</a></li>
+                <li><a href="ch38_deprecated.html">Ch 38: Deprecated</a></li>
+            </ul>
+        </aside>
+
+        <main class="content-area">
+
+            <h1>🏷️ Chapter 6: Phrase Tags</h1>
+            <p>Phrase tags ko <strong>"Semantic Tags"</strong> bhi kaha jata hai kyunki ye sirf design nahi badalte,
+                balki ye batate hain ki wo text kitna zaroori hai ya wo kis tarah ka data hai.</p>
+
+            <hr style="margin: 2rem 0; border: 0; border-top: 1px solid #eee;">
+
+            <h2>1. Semantic Tags (Importance)</h2>
+            <p>Dikhne mein ye <code>&lt;b&gt;</code> aur <code>&lt;i&gt;</code> jaise hote hain, lekin inka piche ka
+                maqsad alag hota hai.</p>
+
+            <div class="note-box">
+                <p><strong>Screen Readers:</strong> Jo log dekh nahi sakte (visually impaired), wo Screen Reader
+                    software use karte hain. <code>&lt;strong&gt;</code> tag dekhne par wo software zor dekar padhta
+                    hai.</p>
+            </div>
+
+            <ul style="list-style: none; padding: 0; margin-top: 15px;">
+                <li style="margin-bottom: 10px;"><strong>&lt;strong&gt; (Strong Importance):</strong> Ye browser ko
+                    batata hai ki ye text bahut zaroori hai.</li>
+                <li style="margin-bottom: 10px;"><em>&lt;em&gt; (Emphasized):</em> Iska use kisi baat par zor dene ke
+                    liye kiya jata hai (Italic look).</li>
+            </ul>
+
+            <div
+                style="background: #1e293b; color: #e2e8f0; padding: 15px; border-radius: 8px; font-family: 'Fira Code', monospace;">
+                &lt;p&gt;Kripya dhyan dein: &lt;strong&gt;Form ki last date kal hai!&lt;/strong&gt;&lt;/p&gt;
+                &lt;p&gt;Mujhe coding &lt;em&gt;sach mein&lt;/em&gt; bahut pasand hai.&lt;/p&gt;
+            </div>
+
+            <h2>2. Technical Tags (Coding ke liye)</h2>
+            <p>Agar aap website par programming code ya computer commands dikhana chahte hain.</p>
+
+            <table style="width: 100%; border-collapse: collapse; margin-bottom: 15px;">
+                <tr style="background: #f1f5f9;">
+                    <th style="padding: 10px; border: 1px solid #ddd;">Tag</th>
+                    <th style="padding: 10px; border: 1px solid #ddd;">Kaam</th>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #ddd;"><code>&lt;code&gt;</code></td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Code ke chhote hisse dikhane ke liye.</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #ddd;"><code>&lt;kbd&gt;</code></td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Keyboard Input (Keys) batane ke liye.</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #ddd;"><code>&lt;samp&gt;</code></td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Sample Output dikhane ke liye.</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #ddd;"><code>&lt;var&gt;</code></td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Variable (Math/Prog) ke liye.</td>
+                </tr>
+            </table>
+
+            <div
+                style="background: #1e293b; color: #e2e8f0; padding: 15px; border-radius: 8px; font-family: 'Fira Code', monospace;">
+                &lt;p&gt;Python mein print karne ke liye &lt;code&gt;print("Hello")&lt;/code&gt; likhein.&lt;/p&gt;
+                &lt;p&gt;Restart karne ke liye &lt;kbd&gt;Ctrl&lt;/kbd&gt; + &lt;kbd&gt;Alt&lt;/kbd&gt; +
+                &lt;kbd&gt;Del&lt;/kbd&gt; dabayein.&lt;/p&gt;
+                &lt;p&gt;Output: &lt;samp&gt;Error 404: Not Found&lt;/samp&gt;&lt;/p&gt;
+                &lt;p&gt;Equation: &lt;var&gt;x&lt;/var&gt; + &lt;var&gt;y&lt;/var&gt; = 10&lt;/p&gt;
+            </div>
+
+            <h2>3. Shortcuts: Abbr aur Acronym</h2>
+            <p><strong>&lt;abbr&gt; (Abbreviation):</strong> Kisi bade naam ka chhota roop. <code>title</code> attribute
+                se full form dikhti hai jab mouse hover karein.</p>
+
+            <div style="background: #fff; border-left: 4px solid var(--primary); padding: 10px; margin: 10px 0;">
+                Main abhi <abbr title="Master of Computer Applications"
+                    style="border-bottom: 1px dotted #000; cursor: help;">MCA</abbr> kar raha hoon. (Mouse yahan layein)
+            </div>
+
+            <h2>4. Special Formatting: Mark aur BDO</h2>
+            <ul>
+                <li><strong>&lt;mark&gt;:</strong> Text ko highlight karne ke liye (Yellow marker jaisa).</li>
+                <li><strong>&lt;bdo&gt;:</strong> Text ki disha badalne ke liye (Bi-Directional Override).</li>
+            </ul>
+
+            <div
+                style="background: #1e293b; color: #e2e8f0; padding: 15px; border-radius: 8px; font-family: 'Fira Code', monospace;">
+                &lt;p&gt;Exam ke liye &lt;mark&gt;Chapter 6&lt;/mark&gt; bahut zaroori hai.&lt;/p&gt;
+                &lt;p&gt;&lt;bdo dir="rtl"&gt;Ye pura sentence ulta dikhega.&lt;/bdo&gt;&lt;/p&gt;
+            </div>
+
+            <h2 style="margin-top: 3rem; color: var(--primary);">📝 Practice Exercise: Technical Page</h2>
+            <p>Niche diye gaye code mein <strong>Semantic</strong> aur <strong>Technical</strong> tags ka mix hai. Run
+                karke output dekhein!</p>
+
+            <div class="live-editor">
+                <div class="editor-header">
+                    <span><i class="fa-solid fa-code"></i> Live Practice</span>
+                    <div class="editor-controls">
+                        <button class="btn-copy" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i>
+                            Copy</button>
+                        <button class="btn-run" onclick="runCode(this)"><i class="fa-solid fa-play"></i> Run</button>
+                    </div>
+                </div>
+
+                <textarea class="code-input" spellcheck="false">
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Programming Tutorial</h2>
+<hr>
+
+<p>Dosto, aaj hum seekhenge ki <strong>HTML</strong> kaise likhte hain.</p>
+
+<p>Sabse pehle apne editor mein <code>&lt;html&gt;</code> tag likhein.</p>
+
+<p>File save karne ke liye <kbd>Ctrl</kbd> + <kbd>S</kbd> dabayein.</p>
+
+<p>Agar aapko <abbr title="Hypertext Markup Language">HTML</abbr> aata hai, toh aap web designer ban sakte hain.</p>
+
+<p>Mera favourite variable <var>user_name</var> hai.</p>
+
+<p><mark>Note:</mark> Hamesha tags ko sahi se band karein.</p>
+
+</body>
+</html>
+                </textarea>
+
+                <div class="output-label">OUTPUT (Result)</div>
+                <iframe class="code-output"></iframe>
+            </div>
+
+            <div style="background: #1e293b; color: #fff; padding: 20px; border-radius: 12px; margin-top: 30px;">
+                <h3 style="color: white; margin-bottom: 15px;">💡 Summary Table</h3>
+                <table style="width: 100%; color: #fff;">
+                    <thead style="background: rgba(255,255,255,0.1);">
+                        <tr>
+                            <th style="padding: 10px;">Tag</th>
+                            <th style="padding: 10px;">Purpose</th>
+                            <th style="padding: 10px;">Look</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>&lt;strong&gt;</td>
+                            <td>Zaroori Text</td>
+                            <td><b>Bold</b></td>
+                        </tr>
+                        <tr>
+                            <td>&lt;em&gt;</td>
+                            <td>Zor Dena</td>
+                            <td><i>Italic</i></td>
+                        </tr>
+                        <tr>
+                            <td>&lt;code&gt;</td>
+                            <td>Code Segment</td>
+                            <td>Monospace</td>
+                        </tr>
+                        <tr>
+                            <td>&lt;kbd&gt;</td>
+                            <td>Keyboard Key</td>
+                            <td>Monospace</td>
+                        </tr>
+                        <tr>
+                            <td>&lt;mark&gt;</td>
+                            <td>Highlight</td>
+                            <td>Yellow BG</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="chapter-nav">
+                <a href="ch5_formatting.html" class="btn secondary">&larr; Prev</a>
+
+                <a href="ch7_meta_tags.html" class="btn">Next &rarr;</a>
+            </div>
+
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Ashish Code Lab. Made with ❤️ in Mau, UP.</p>
+    </footer>
+
+    <script src="../script.js"></script>
+
+</body>
+
+</html>

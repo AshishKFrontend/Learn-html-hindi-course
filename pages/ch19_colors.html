@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 19: Color Models | Ashish Lab</title>
+    
+    <link rel="stylesheet" href="../style.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Fira+Code&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">
+            <a href="../index.html"><i class="fa-brands fa-html5"></i> Ashish<span>Lab</span></a>
+        </div>
+        <div class="menu-toggle" id="mobile-menu">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+        <ul class="nav-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="ch20_fonts.html" class="btn">Next Chapter <i class="fa-solid fa-arrow-right"></i></a></li>
+        </ul>
+    </nav>
+
+    <div class="chapter-layout">
+        
+        <aside class="sidebar">
+            <h3>Course Index</h3>
+            <ul style="max-height: 70vh; overflow-y: auto; padding-right: 5px;">
+                <li><a href="ch1_intro.html"><i class="fa-solid fa-check"></i> Ch 1: Overview</a></li>
+                <li><a href="ch2_basic_tags.html"><i class="fa-solid fa-check"></i> Ch 2: Basic Tags</a></li>
+                <li><a href="ch3_elements.html"><i class="fa-solid fa-check"></i> Ch 3: Elements</a></li>
+                <li><a href="ch4_attributes.html"><i class="fa-solid fa-check"></i> Ch 4: Attributes</a></li>
+                <li><a href="ch5_formatting.html"><i class="fa-solid fa-check"></i> Ch 5: Formatting</a></li>
+                <li><a href="ch6_phrase_tags.html"><i class="fa-solid fa-check"></i> Ch 6: Phrase Tags</a></li>
+                <li><a href="ch7_meta_tags.html"><i class="fa-solid fa-check"></i> Ch 7: Meta Tags</a></li>
+                <li><a href="ch8_comments.html"><i class="fa-solid fa-check"></i> Ch 8: Comments</a></li>
+                <li><a href="ch9_images.html"><i class="fa-solid fa-check"></i> Ch 9: Images</a></li>
+                <li><a href="ch10_tables.html"><i class="fa-solid fa-check"></i> Ch 10: Tables</a></li>
+                <li><a href="ch11_lists.html"><i class="fa-solid fa-check"></i> Ch 11: Lists</a></li>
+                <li><a href="ch12_text_links.html"><i class="fa-solid fa-check"></i> Ch 12: Text Links</a></li>
+                <li><a href="ch13_image_links.html"><i class="fa-solid fa-check"></i> Ch 13: Image Maps</a></li>
+                <li><a href="ch14_email_links.html"><i class="fa-solid fa-check"></i> Ch 14: Email Links</a></li>
+                <li><a href="ch15_frames.html"><i class="fa-solid fa-check"></i> Ch 15: Frames</a></li>
+                <li><a href="ch16_iframes.html"><i class="fa-solid fa-check"></i> Ch 16: Iframes</a></li>
+                <li><a href="ch17_blocks.html"><i class="fa-solid fa-check"></i> Ch 17: Div & Span</a></li>
+                <li><a href="ch18_backgrounds.html"><i class="fa-solid fa-check"></i> Ch 18: Backgrounds</a></li>
+                <li><a href="ch19_colors.html" class="active"><i class="fa-solid fa-circle-check"></i> Ch 19: Color Models</a></li>
+                <li><a href="ch20_fonts.html">Ch 20: Fonts</a></li>
+                <li><a href="ch21_forms.html">Ch 21: Forms</a></li>
+                <li><a href="ch22_multimedia.html">Ch 22: Multimedia</a></li>
+                <li><a href="ch23_marquee.html">Ch 23: Marquee</a></li>
+                <li><a href="ch24_header.html">Ch 24: Header Tags</a></li>
+                <li><a href="ch25_css.html">Ch 25: CSS Setup</a></li>
+                <li><a href="ch26_javascript.html">Ch 26: JavaScript</a></li>
+                <li><a href="ch27_layout.html">Ch 27: Layouts</a></li>
+                <li><a href="ch28_mouse_events.html">Ch 28: Mouse Events</a></li>
+                <li><a href="ch29_window_events.html">Ch 29: Window Events</a></li>
+                <li><a href="ch30_form_events.html">Ch 30: Form Events</a></li>
+                <li><a href="ch31_hardware_events.html">Ch 31: Hardware</a></li>
+                <li><a href="ch32_entities.html">Ch 32: Entities</a></li>
+                <li><a href="ch33_url_encoding.html">Ch 33: URL Encode</a></li>
+                <li><a href="ch34_lang_codes.html">Ch 34: Lang Codes</a></li>
+                <li><a href="ch35_char_sets.html">Ch 35: Char Sets</a></li>
+                <li><a href="ch36_http_status.html">Ch 36: HTTP Status</a></li>
+                <li><a href="ch37_mime_types.html">Ch 37: MIME Types</a></li>
+                <li><a href="ch38_deprecated.html">Ch 38: Deprecated</a></li>
+            </ul>
+        </aside>
+
+        <main class="content-area">
+            
+            <h1>🌈 Chapter 19: HTML Color Models</h1>
+            <p>Rangon ko computer kaise samajhta hai, ye jaanna bahut zaroori hai. Computer humari tarah "Laal" ya "Neela" nahi samajhta, wo codes samajhta hai.</p>
+            
+            <hr style="margin: 2rem 0; border: 0; border-top: 1px solid #eee;">
+
+            <h2>1. Hexadecimal System (#RRGGBB)</h2>
+            <p>Ye web par sabse zyada use hone wala format hai. Ye <strong>#</strong> (Hash) se shuru hota hai.</p>
+            
+            <div class="note-box">
+                <p><strong>Logic:</strong> Ye 0-9 aur A-F ke beech ki values leta hai.</p>
+                <ul>
+                    <li><code>00</code> = Sabse Kam (Dark)</li>
+                    <li><code>FF</code> = Sabse Zyada (Bright)</li>
+                </ul>
+                <p><strong>Shortcut:</strong> Agar code repeat ho raha ho (jaise <code>#FF0000</code>), toh ise <code>#F00</code> bhi likh sakte hain.</p>
+            </div>
+            
+
+            <div style="background: #1e293b; color: #e2e8f0; padding: 15px; border-radius: 8px; font-family: 'Fira Code', monospace;">
+&lt;h1 style="color: #FF5733;"&gt;Hex Color Title&lt;/h1&gt;
+&lt;p style="color: #000000;"&gt;Black Text&lt;/p&gt;
+&lt;p style="color: #FFFFFF;"&gt;White Text&lt;/p&gt;
+            </div>
+
+            <h2>2. RGB (Red, Green, Blue)</h2>
+            <p>Ye "Additive Color Model" hai. Isme teen rang milkar naya rang banate hain.</p>
+            <ul>
+                <li>Range: 0 se 255 tak.</li>
+                <li><code>rgb(255, 255, 255)</code> = Safed (White)</li>
+                <li><code>rgb(0, 0, 0)</code> = Kaala (Black)</li>
+            </ul>
+             
+
+[Image of RGB additive color model]
+
+            <div style="background: #1e293b; color: #e2e8f0; padding: 15px; border-radius: 8px; font-family: 'Fira Code', monospace;">
+&lt;div style="background-color: rgb(0, 128, 0);"&gt;Green Box&lt;/div&gt;
+            </div>
+
+            <h2>3. RGBA (Modern Extension)</h2>
+            <p>Isme <strong>A</strong> ka matlab hai <strong>Alpha</strong> (Transparency/Opaqueness).</p>
+            <div class="note-box" style="border-left-color: #ec4899; background: #fdf2f8;">
+                <p><strong>Alpha Logic:</strong></p>
+                <ul>
+                    <li><code>0.0</code> = Invisible (Poora gayab)</li>
+                    <li><code>0.5</code> = 50% Transparent (Dhundhla)</li>
+                    <li><code>1.0</code> = Solid (Bilkul saaf)</li>
+                </ul>
+            </div>
+
+            <div style="background: #1e293b; color: #e2e8f0; padding: 15px; border-radius: 8px; font-family: 'Fira Code', monospace;">
+&lt;!-- 50% Transparent Red --&gt;
+&lt;div style="background-color: rgba(255, 0, 0, 0.5);"&gt;See-through Box&lt;/div&gt;
+            </div>
+
+            <h2 style="margin-top: 3rem; color: var(--primary);">📝 Live Example: Transparent Colors</h2>
+            <p>Is code ko <strong>Run</strong> karein. Dekhein kaise <strong>RGBA</strong> wala box piche ke text ko dikhata hai (See-through effect).</p>
+
+            <div class="live-editor">
+                <div class="editor-header">
+                    <span><i class="fa-solid fa-code"></i> Live Practice</span>
+                    <div class="editor-controls">
+                        <button class="btn-copy" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Copy</button>
+                        <button class="btn-run" onclick="runCode(this)"><i class="fa-solid fa-play"></i> Run</button>
+                    </div>
+                </div>
+                
+                <textarea class="code-input" spellcheck="false">
+<!DOCTYPE html>
+<html>
+<body style="background-image: url('https://images.unsplash.com/photo-1769631417306-a1da09f42b20?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDMyfGJvOGpRS1RhRTBZfHxlbnwwfHx8fHw%3D'); background-size: cover;">
+
+<h2>Color Models Demo</h2>
+
+<div style="background-color: #FF5733; color: white; padding: 20px; margin-bottom: 20px;">
+    <strong>1. Hex Code (#FF5733):</strong>
+    Ye solid Orange color hai. Iske aar-paar nahi dikhega.
+</div>
+
+<div style="background-color: rgb(0, 0, 255); color: white; padding: 20px; margin-bottom: 20px;">
+    <strong>2. RGB (0, 0, 255):</strong>
+    Ye solid Blue color hai.
+</div>
+
+<div style="background-color: rgba(0, 0, 0, 0.6); color: white; padding: 20px; margin-bottom: 20px; border: 2px solid white;">
+    <strong>3. RGBA (0, 0, 0, 0.6):</strong>
+    Ye Black hai lekin 60% opacity ke saath.
+    <br>Notice kariye, aapko iske piche ka background pattern dikh raha hoga!
+</div>
+
+</body>
+</html>
+                </textarea>
+
+                <div class="output-label">OUTPUT (Result)</div>
+                <iframe class="code-output"></iframe>
+            </div>
+
+            <div style="background: #1e293b; color: #fff; padding: 20px; border-radius: 12px; margin-top: 30px;">
+                <h3 style="color: white; margin-bottom: 15px;">💡 Summary Table</h3>
+                
+                <table style="width: 100%; color: #fff; background: transparent; box-shadow: none; border: none;">
+                    <thead style="background: rgba(255,255,255,0.1);">
+                        <tr>
+                            <th style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.2); background: transparent; color: #fff;">Model</th>
+                            <th style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.2); background: transparent; color: #fff;">Syntax</th>
+                            <th style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.2); background: transparent; color: #fff;">Example</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.1);">Hex</td>
+                            <td style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.1);">#RRGGBB</td>
+                            <td style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.1);">#FF0000 (Red)</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.1);">RGB</td>
+                            <td style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.1);">rgb(r, g, b)</td>
+                            <td style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.1);">rgb(255, 0, 0)</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.1);">RGBA</td>
+                            <td style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.1);">rgba(r, g, b, alpha)</td>
+                            <td style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.1);">rgba(255,0,0, 0.5)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+          <div class="chapter-nav">
+    <a href="ch18_backgrounds.html" class="btn secondary">&larr; Prev</a>
+
+    <a href="ch20_fonts.html" class="btn">Next &rarr;</a>
+</div>
+
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Ashish Code Lab. Made with ❤️ in Mau, UP.</p>
+    </footer>
+
+    <script src="../script.js"></script>
+
+</body>
+</html>

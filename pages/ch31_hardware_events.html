@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 31: Hardware Events | Ashish Lab</title>
+    
+    <link rel="stylesheet" href="../style.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Fira+Code&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">
+            <a href="../index.html"><i class="fa-brands fa-html5"></i> Ashish<span>Lab</span></a>
+        </div>
+        <div class="menu-toggle" id="mobile-menu">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+        <ul class="nav-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="ch32_entities.html" class="btn">Next Chapter <i class="fa-solid fa-arrow-right"></i></a></li>
+        </ul>
+    </nav>
+
+    <div class="chapter-layout">
+        
+        <aside class="sidebar">
+            <h3>Course Index</h3>
+            <ul style="max-height: 70vh; overflow-y: auto; padding-right: 5px;">
+                <li><a href="ch1_intro.html"><i class="fa-solid fa-check"></i> Ch 1: Overview</a></li>
+                <li><a href="ch2_basic_tags.html"><i class="fa-solid fa-check"></i> Ch 2: Basic Tags</a></li>
+                <li><a href="ch3_elements.html"><i class="fa-solid fa-check"></i> Ch 3: Elements</a></li>
+                <li><a href="ch4_attributes.html"><i class="fa-solid fa-check"></i> Ch 4: Attributes</a></li>
+                <li><a href="ch5_formatting.html"><i class="fa-solid fa-check"></i> Ch 5: Formatting</a></li>
+                <li><a href="ch6_phrase_tags.html"><i class="fa-solid fa-check"></i> Ch 6: Phrase Tags</a></li>
+                <li><a href="ch7_meta_tags.html"><i class="fa-solid fa-check"></i> Ch 7: Meta Tags</a></li>
+                <li><a href="ch8_comments.html"><i class="fa-solid fa-check"></i> Ch 8: Comments</a></li>
+                <li><a href="ch9_images.html"><i class="fa-solid fa-check"></i> Ch 9: Images</a></li>
+                <li><a href="ch10_tables.html"><i class="fa-solid fa-check"></i> Ch 10: Tables</a></li>
+                <li><a href="ch11_lists.html"><i class="fa-solid fa-check"></i> Ch 11: Lists</a></li>
+                <li><a href="ch12_text_links.html"><i class="fa-solid fa-check"></i> Ch 12: Text Links</a></li>
+                <li><a href="ch13_image_links.html"><i class="fa-solid fa-check"></i> Ch 13: Image Maps</a></li>
+                <li><a href="ch14_email_links.html"><i class="fa-solid fa-check"></i> Ch 14: Email Links</a></li>
+                <li><a href="ch15_frames.html"><i class="fa-solid fa-check"></i> Ch 15: Frames</a></li>
+                <li><a href="ch16_iframes.html"><i class="fa-solid fa-check"></i> Ch 16: Iframes</a></li>
+                <li><a href="ch17_blocks.html"><i class="fa-solid fa-check"></i> Ch 17: Div & Span</a></li>
+                <li><a href="ch18_backgrounds.html"><i class="fa-solid fa-check"></i> Ch 18: Backgrounds</a></li>
+                <li><a href="ch19_colors.html"><i class="fa-solid fa-check"></i> Ch 19: Color Models</a></li>
+                <li><a href="ch20_fonts.html"><i class="fa-solid fa-check"></i> Ch 20: Fonts</a></li>
+                <li><a href="ch21_forms.html"><i class="fa-solid fa-check"></i> Ch 21: Forms</a></li>
+                <li><a href="ch22_multimedia.html"><i class="fa-solid fa-check"></i> Ch 22: Multimedia</a></li>
+                <li><a href="ch23_marquee.html"><i class="fa-solid fa-check"></i> Ch 23: Marquee</a></li>
+                <li><a href="ch24_header.html"><i class="fa-solid fa-check"></i> Ch 24: Header Tags</a></li>
+                <li><a href="ch25_css.html"><i class="fa-solid fa-check"></i> Ch 25: CSS Setup</a></li>
+                <li><a href="ch26_javascript.html"><i class="fa-solid fa-check"></i> Ch 26: JavaScript</a></li>
+                <li><a href="ch27_layout.html"><i class="fa-solid fa-check"></i> Ch 27: Layouts</a></li>
+                <li><a href="ch28_mouse_events.html"><i class="fa-solid fa-check"></i> Ch 28: Mouse Events</a></li>
+                <li><a href="ch29_window_events.html"><i class="fa-solid fa-check"></i> Ch 29: Window Events</a></li>
+                <li><a href="ch30_form_events.html"><i class="fa-solid fa-check"></i> Ch 30: Form Events</a></li>
+                <li><a href="ch31_hardware_events.html" class="active"><i class="fa-solid fa-circle-check"></i> Ch 31: Hardware</a></li>
+                <li><a href="ch32_entities.html">Ch 32: Entities</a></li>
+                <li><a href="ch33_url_encoding.html">Ch 33: URL Encode</a></li>
+                <li><a href="ch34_lang_codes.html">Ch 34: Lang Codes</a></li>
+                <li><a href="ch35_char_sets.html">Ch 35: Char Sets</a></li>
+                <li><a href="ch36_http_status.html">Ch 36: HTTP Status</a></li>
+                <li><a href="ch37_mime_types.html">Ch 37: MIME Types</a></li>
+                <li><a href="ch38_deprecated.html">Ch 38: Deprecated</a></li>
+            </ul>
+        </aside>
+
+        <main class="content-area">
+            
+            <h1>⌨️ Chapter 31: Hardware Events</h1>
+            <p>Hardware events humein batate hain ki user Physical devices (Keyboard, Mouse) ke saath kaise behave kar raha hai.</p>
+            
+            <hr style="margin: 2rem 0; border: 0; border-top: 1px solid #eee;">
+
+            <h2>1. Keyboard Events (Button Dabana)</h2>
+            <p>Ek button dabana sirf ek action nahi, balki teen hisson mein hota hai:</p>
+            
+            
+
+            <ul style="list-style: none; padding: 0;">
+                <li style="background: #f8fafc; padding: 15px; margin-bottom: 10px; border-left: 4px solid #64748b;">
+                    <strong>onkeydown:</strong> Jaise hi button niche gaya. Ye Shift, Ctrl, Arrows sab ko track karta hai. (Gaming ke liye best).
+                </li>
+                <li style="background: #f8fafc; padding: 15px; margin-bottom: 10px; border-left: 4px solid #3b82f6;">
+                    <strong>onkeyup:</strong> Jab ungli utha li jaye. Ye password strength check karne ke liye best hai.
+                </li>
+            </ul>
+
+            <div style="background: #1e293b; color: #e2e8f0; padding: 15px; border-radius: 8px; font-family: 'Fira Code', monospace; margin-top: 15px;">
+&lt;input type="text" onkeyup="alert('Aapne key chhod di!')"&gt;
+            </div>
+
+            <h2>2. Mouse Movement & Tracking</h2>
+            <p>Mouse events sirf click tak seemit nahi hain, ye cursor ki har harkat ko track karte hain.</p>
+            
+            
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 15px;">
+                <div style="padding: 10px; border: 1px dashed #ccc;"><code>onmouseover</code>: Jab cursor element ke <strong>Andar</strong> aaye.</div>
+                <div style="padding: 10px; border: 1px dashed #ccc;"><code>onmouseout</code>: Jab cursor element se <strong>Bahar</strong> nikal jaye.</div>
+                <div style="padding: 10px; border: 1px dashed #ccc;"><code>onmousedown</code>: Click shuru hona (Dabana).</div>
+                <div style="padding: 10px; border: 1px dashed #ccc;"><code>onmouseup</code>: Click khatam hona (Chhodna).</div>
+            </div>
+
+            <h2 style="margin-top: 3rem; color: var(--primary);">📝 Live Practice: Action Tracking</h2>
+            <p>Ise <strong>Run</strong> karein:
+            <br>1. Input box mein kuch type karein.
+            <br>2. Neeche wale Color Box par mouse ghuma kar aur daba kar dekhein.</p>
+
+            <div class="live-editor">
+                <div class="editor-header">
+                    <span><i class="fa-solid fa-code"></i> Hardware Demo</span>
+                    <div class="editor-controls">
+                        <button class="btn-copy" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Copy</button>
+                        <button class="btn-run" onclick="runCode(this)"><i class="fa-solid fa-play"></i> Run</button>
+                    </div>
+                </div>
+                
+                <textarea class="code-input" spellcheck="false">
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  .track-box { width: 100%; height: 100px; background: #ddd; display: flex; align-items: center; justify-content: center; border: 2px solid #333; cursor: crosshair; }
+  .key-info { background: #1e293b; color: #4ade80; padding: 10px; margin-top: 10px; font-family: monospace; }
+</style>
+</head>
+<body>
+
+<h3>1. Keyboard Tracker</h3>
+<input type="text" placeholder="Type something..." onkeydown="logKey(event)" style="width: 100%; padding: 10px;">
+<div class="key-info" id="keyLog">Last Key: None</div>
+
+<h3>2. Mouse Tracker</h3>
+<div class="track-box" 
+     onmouseover="this.style.background='yellow'; this.innerHTML='Mouse INSIDE'" 
+     onmouseout="this.style.background='#ddd'; this.innerHTML='Mouse OUTSIDE'"
+     onmousedown="this.style.borderColor='red'; this.style.borderWidth='5px'"
+     onmouseup="this.style.borderColor='#333'; this.style.borderWidth='2px'">
+    Move Mouse Here
+</div>
+
+<script>
+    function logKey(e) {
+        document.getElementById('keyLog').innerHTML = "Last Key: " + e.key + " (Code: " + e.keyCode + ")";
+    }
+</script>
+
+</body>
+</html>
+                </textarea>
+
+                <div class="output-label">OUTPUT (Result)</div>
+                <iframe class="code-output"></iframe>
+            </div>
+
+            <div style="background: #1e293b; color: #fff; padding: 20px; border-radius: 12px; margin-top: 30px;">
+                <h3 style="color: white; margin-bottom: 15px;">💡 Summary Table</h3>
+                
+                <table style="width: 100%; color: #fff; background: transparent; box-shadow: none; border: none;">
+                    <thead style="background: rgba(255,255,255,0.1);">
+                        <tr>
+                            <th style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.2); background: transparent; color: #fff;">Event</th>
+                            <th style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.2); background: transparent; color: #fff;">Action</th>
+                            <th style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.2); background: transparent; color: #fff;">Best Use</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.1);">onkeydown</td>
+                            <td style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.1);">Key press start</td>
+                            <td style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.1);">Game controls.</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.1);">onkeyup</td>
+                            <td style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.1);">Key release</td>
+                            <td style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.1);">Strength checker.</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.1);">onmousedown</td>
+                            <td style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.1);">Mouse click start</td>
+                            <td style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.1);">Drag and drop shuru.</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.1);">onmousemove</td>
+                            <td style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.1);">Moving cursor</td>
+                            <td style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.1);">Drawing / Paint apps.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+           <div class="chapter-nav">
+    <a href="ch30_form_events.html" class="btn secondary">&larr; Prev</a>
+
+    <a href="ch32_entities.html" class="btn">Next &rarr;</a>
+</div>
+
+        </main>
+    </div>
+
+    <script src="../script.js"></script>
+
+</body>
+</html>

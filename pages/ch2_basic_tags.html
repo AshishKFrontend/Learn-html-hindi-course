@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="hi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 2: Basic Tags | Ashish Lab</title>
+
+    <link rel="stylesheet" href="../style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Fira+Code&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="logo">
+            <a href="../index.html"><i class="fa-brands fa-html5"></i> Ashish<span>Lab</span></a>
+        </div>
+        <div class="menu-toggle" id="mobile-menu">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+        <ul class="nav-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="ch3_elements.html" class="btn">Next Chapter <i class="fa-solid fa-arrow-right"></i></a></li>
+        </ul>
+    </nav>
+
+    <div class="chapter-layout">
+
+        <aside class="sidebar">
+            <h3>Course Index</h3>
+            <ul style="max-height: 70vh; overflow-y: auto; padding-right: 5px;">
+                <li><a href="ch1_intro.html"><i class="fa-solid fa-check"></i> Ch 1: Overview</a></li>
+                <li><a href="ch2_basic_tags.html" class="active"><i class="fa-solid fa-circle-check"></i> Ch 2: Basic
+                        Tags</a></li>
+                <li><a href="ch3_elements.html">Ch 3: Elements</a></li>
+                <li><a href="ch4_attributes.html">Ch 4: Attributes</a></li>
+
+                <li><a href="ch5_formatting.html">Ch 5: Formatting</a></li>
+                <li><a href="ch6_phrase_tags.html">Ch 6: Phrase Tags</a></li>
+                <li><a href="ch7_meta_tags.html">Ch 7: Meta Tags</a></li>
+                <li><a href="ch8_comments.html">Ch 8: Comments</a></li>
+
+                <li><a href="ch9_images.html">Ch 9: Images</a></li>
+                <li><a href="ch10_tables.html">Ch 10: Tables</a></li>
+                <li><a href="ch11_lists.html">Ch 11: Lists</a></li>
+
+                <li><a href="ch12_text_links.html">Ch 12: Text Links</a></li>
+                <li><a href="ch13_image_links.html">Ch 13: Image Maps</a></li>
+                <li><a href="ch14_email_links.html">Ch 14: Email Links</a></li>
+                <li><a href="ch15_frames.html">Ch 15: Frames</a></li>
+                <li><a href="ch16_iframes.html">Ch 16: Iframes</a></li>
+
+                <li><a href="ch17_blocks.html">Ch 17: Div & Span</a></li>
+                <li><a href="ch18_backgrounds.html">Ch 18: Backgrounds</a></li>
+                <li><a href="ch19_colors.html">Ch 19: Color Models</a></li>
+                <li><a href="ch20_fonts.html">Ch 20: Fonts</a></li>
+
+                <li><a href="ch21_forms.html">Ch 21: Forms</a></li>
+                <li><a href="ch22_multimedia.html">Ch 22: Multimedia</a></li>
+                <li><a href="ch23_marquee.html">Ch 23: Marquee</a></li>
+
+                <li><a href="ch24_header.html">Ch 24: Header Tags</a></li>
+                <li><a href="ch25_css.html">Ch 25: CSS Setup</a></li>
+                <li><a href="ch26_javascript.html">Ch 26: JavaScript</a></li>
+                <li><a href="ch27_layout.html">Ch 27: Layouts</a></li>
+
+                <li><a href="ch28_mouse_events.html">Ch 28: Mouse Events</a></li>
+                <li><a href="ch29_window_events.html">Ch 29: Window Events</a></li>
+                <li><a href="ch30_form_events.html">Ch 30: Form Events</a></li>
+                <li><a href="ch31_hardware_events.html">Ch 31: Hardware</a></li>
+
+                <li><a href="ch32_entities.html">Ch 32: Entities</a></li>
+                <li><a href="ch33_url_encoding.html">Ch 33: URL Encode</a></li>
+                <li><a href="ch34_lang_codes.html">Ch 34: Lang Codes</a></li>
+                <li><a href="ch35_char_sets.html">Ch 35: Char Sets</a></li>
+
+                <li><a href="ch36_http_status.html">Ch 36: HTTP Status</a></li>
+                <li><a href="ch37_mime_types.html">Ch 37: MIME Types</a></li>
+                <li><a href="ch38_deprecated.html">Ch 38: Deprecated</a></li>
+            </ul>
+        </aside>
+
+        <main class="content-area">
+
+            <h1>🏗️ Chapter 2: HTML Basic Tags</h1>
+            <p>Har tag ka ek maqsad hota hai. Jab aap inhein sahi tarike se use karte hain, toh aapki website
+                <strong>Fast, SEO-friendly, aur Accessible</strong> banti hai.
+            </p>
+
+            <hr style="margin: 2rem 0; border: 0; border-top: 1px solid #eee;">
+
+            <h2>1. Headings: &lt;h1&gt; to &lt;h6&gt;</h2>
+            <p>Headings browser ko batati hain ki content ki hierarchy (importance) kya hai.</p>
+
+            <div class="note-box">
+                <p><strong>Logic:</strong> <code>&lt;h1&gt;</code> sabse bada (font-size) aur sabse important hota hai.
+                    Jaise-jaise number badhta hai (h2, h3...), size chhota hota jata hai.</p>
+                <p style="margin-top: 10px; color: #d97706;"><i class="fa-solid fa-star"></i> <strong>Best
+                        Practice:</strong> Ek page par sirf ek <code>&lt;h1&gt;</code> rakhein. Ye aapki website ka main
+                    title hota hai.</p>
+            </div>
+
+            <div style="border: 1px solid #e2e8f0; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
+                <h1>H1: Web Development Course</h1>
+                <h2>H2: Chapter 2 Name</h2>
+                <h3>H3: Topic Name</h3>
+                <h4>H4: Details</h4>
+                <h5>H5: More Details</h5>
+                <h6>H6: Smallest Note</h6>
+            </div>
+
+            <h2>2. Paragraphs: &lt;p&gt; Tag</h2>
+            <p>Ye tag content ko "Blocks" mein todne ke liye use hota hai. Browser paragraph ke upar aur niche
+                automatically <strong>Margin (space)</strong> add kar deta hai.</p>
+
+            <div
+                style="background: #fff1f2; padding: 15px; border-radius: 8px; border: 1px solid #fecdd3; margin-bottom: 15px;">
+                <h4 style="color: #be123c;">⚠️ Whitespace Collapse Rule:</h4>
+                <p>Agar aap <code>&lt;p&gt;</code> ke andar 10 spaces denge, toh browser use sirf 1 space dikhayega.</p>
+            </div>
+
+            <div
+                style="background: #1e293b; color: #e2e8f0; padding: 15px; border-radius: 8px; font-family: 'Fira Code', monospace;">
+                &lt;p&gt;
+                Ye ek normal paragraph hai. HTML extra spaces ko ignore
+                kar deta hai.
+                &lt;/p&gt;
+            </div>
+
+            <h2>3. Line Breaks: &lt;br&gt; Tag</h2>
+            <p>Jab aapko naya block (paragraph) nahi banana, sirf cursor ko agali line par bhejna ho.</p>
+            <ul>
+                <li><strong>Self-Closing:</strong> Iska koi closing tag nahi hota.</li>
+                <li><strong>Use Case:</strong> Addresses, Poems, ya Lyrics likhne ke liye best hai.</li>
+            </ul>
+
+            <div
+                style="background: #1e293b; color: #e2e8f0; padding: 15px; border-radius: 8px; font-family: 'Fira Code', monospace;">
+                &lt;p&gt;<br>
+                &nbsp;&nbsp;Ashish Kumar&lt;br&gt;<br>
+                &nbsp;&nbsp;Mau, Uttar Pradesh&lt;br&gt;<br>
+                &nbsp;&nbsp;India - 275101<br>
+                &lt;/p&gt;
+            </div>
+
+            <h2>4. Horizontal Rules: &lt;hr&gt; Tag</h2>
+            <p>Ye ek horizontal line khinch deta hai jo content ko visually alag karti hai. Ye <strong>"Thematic
+                    Break"</strong> (topic change) ko darshata hai.</p>
+            <p>Example:</p>
+            <hr>
+            <p style="text-align: center; color: #64748b; font-size: 0.9rem;">(Upar wali line &lt;hr&gt; hai)</p>
+
+            <h2>5. Centering Content: &lt;center&gt; Tag</h2>
+            <div
+                style="background: #fef2f2; border-left: 5px solid #ef4444; padding: 15px; border-radius: 8px; margin: 15px 0;">
+                <h4 style="color: #991b1b;"><i class="fa-solid fa-triangle-exclamation"></i> Caution (Savdhan)!</h4>
+                <p>Ye tag <strong>Deprecated</strong> hai. Iska matlab naye browsers ise support karna band kar sakte
+                    hain.</p>
+                <p><strong>Modern Way:</strong> CSS ka <code>text-align: center;</code> use karein.</p>
+            </div>
+
+            <h2>6. Preserving Formatting: &lt;pre&gt; Tag</h2>
+            <p>Agar aap chahte hain ki aapka code, spaces, aur tabs exactly waise hi dikhein jaise aapne editor mein
+                likhe hain, toh <code>&lt;pre&gt;</code> use karein.</p>
+            <div
+                style="background: #f1f5f9; padding: 15px; border-radius: 8px; border: 1px solid #cbd5e1; font-family: monospace;">
+                <pre>
+Function Hello() {
+    print("Hello World");
+    //   Spaces and
+    //   Indentations
+    //   Are Preserved!
+}
+</pre>
+            </div>
+
+            <h2 style="margin-top: 3rem; color: var(--primary);">🚀 Pro-Level Exercise</h2>
+            <p>Niche diye gaye code mein <strong>Heading, Paragraph, aur Pre tag</strong> ka mix hai. Ise
+                <strong>Run</strong> karke output dekhein!
+            </p>
+
+            <div class="live-editor">
+                <div class="editor-header">
+                    <span><i class="fa-solid fa-code"></i> Live Practice</span>
+                    <div class="editor-controls">
+                        <button class="btn-copy" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i>
+                            Copy</button>
+                        <button class="btn-run" onclick="runCode(this)"><i class="fa-solid fa-play"></i> Run</button>
+                    </div>
+                </div>
+
+                <textarea class="code-input" spellcheck="false">
+<!DOCTYPE html>
+<html>
+<head>
+<title>Chapter 2 Practice</title>
+</head>
+<body>
+
+<h1 style="color: blue;">My Coding Profile</h1>
+<hr>
+
+<h2>Introduction</h2>
+<p>Mera naam <b>Ashish</b> hai aur main coding seekh raha hoon.<br>
+Mujhe Python aur Web Development seekhna pasand hai.</p>
+
+<hr>
+
+<h2>My Daily Schedule</h2>
+<pre>
+Time        Task
+----        ----
+08:00 AM    Study Python
+11:00 AM    Web Dev Practice
+02:00 PM    Assignments
+</pre>
+
+<hr>
+<p style="text-align: center;">End of Page</p>
+</body>
+</html>
+                </textarea>
+
+                <div class="output-label">OUTPUT (Result)</div>
+                <iframe class="code-output"></iframe>
+            </div>
+
+            <div class="chapter-nav">
+                <a href="ch1_intro.html" class="btn secondary">&larr; Prev</a>
+
+                <a href="ch3_elements.html" class="btn">Next &rarr;</a>
+            </div>
+
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Ashish Code Lab. Made with ❤️ in Mau, UP.</p>
+    </footer>
+
+    <script src="../script.js"></script>
+
+</body>
+
+</html>

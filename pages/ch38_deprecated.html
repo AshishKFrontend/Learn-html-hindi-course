@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 38: Deprecated Tags | Ashish Lab</title>
+    <link rel="stylesheet" href="../style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Fira+Code&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+    <div class="logo">
+        <a href="../index.html"><i class="fa-brands fa-html5"></i> Ashish<span>Lab</span></a>
+    </div>
+
+    <div class="nav-actions">
+        <a href="congratulations.html" id="finish-btn-mobile" class="finish-btn-mobile">
+            Finish <i class="fa-solid fa-check"></i>
+        </a>
+        
+        <div class="menu-toggle" id="mobile-menu">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+    </div>
+
+    <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="congratulations.html" id="finish-btn-desktop" class="btn" style="background: #22c55e;">Finish Course <i class="fa-solid fa-arrow-right"></i></a></li>
+    </ul>
+</nav>
+
+    <div class="chapter-layout">
+        <aside class="sidebar">
+            <h3>Course Index</h3>
+            <ul style="max-height: 85vh; overflow-y: auto; padding-right: 5px;">
+                <li><a href="ch1_intro.html">Ch 1: Overview</a></li>
+                <li><a href="ch2_basic_tags.html">Ch 2: Basic Tags</a></li>
+                <li><a href="ch3_elements.html">Ch 3: Elements</a></li>
+                <li><a href="ch4_attributes.html">Ch 4: Attributes</a></li>
+                <li><a href="ch5_formatting.html">Ch 5: Formatting</a></li>
+                <li><a href="ch6_phrase_tags.html">Ch 6: Phrase Tags</a></li>
+                <li><a href="ch7_meta_tags.html">Ch 7: Meta Tags</a></li>
+                <li><a href="ch8_comments.html">Ch 8: Comments</a></li>
+                <li><a href="ch9_images.html">Ch 9: Images</a></li>
+                <li><a href="ch10_tables.html">Ch 10: Tables</a></li>
+                <li><a href="ch11_lists.html">Ch 11: Lists</a></li>
+                <li><a href="ch12_text_links.html">Ch 12: Text Links</a></li>
+                <li><a href="ch13_image_links.html">Ch 13: Image Maps</a></li>
+                <li><a href="ch14_email_links.html">Ch 14: Email Links</a></li>
+                <li><a href="ch15_frames.html">Ch 15: Frames</a></li>
+                <li><a href="ch16_iframes.html">Ch 16: Iframes</a></li>
+                <li><a href="ch17_blocks.html">Ch 17: Div & Span</a></li>
+                <li><a href="ch18_backgrounds.html">Ch 18: Backgrounds</a></li>
+                <li><a href="ch19_colors.html">Ch 19: Color Models</a></li>
+                <li><a href="ch20_fonts.html">Ch 20: Fonts</a></li>
+                <li><a href="ch21_forms.html">Ch 21: Forms</a></li>
+                <li><a href="ch22_multimedia.html">Ch 22: Multimedia</a></li>
+                <li><a href="ch23_marquee.html">Ch 23: Marquee</a></li>
+                <li><a href="ch24_header.html">Ch 24: Header Tags</a></li>
+                <li><a href="ch25_css.html">Ch 25: CSS Setup</a></li>
+                <li><a href="ch26_javascript.html">Ch 26: JavaScript</a></li>
+                <li><a href="ch27_layout.html">Ch 27: Layouts</a></li>
+                <li><a href="ch28_mouse_events.html">Ch 28: Mouse Events</a></li>
+                <li><a href="ch29_window_events.html">Ch 29: Window Events</a></li>
+                <li><a href="ch30_form_events.html">Ch 30: Form Events</a></li>
+                <li><a href="ch31_hardware_events.html">Ch 31: Hardware</a></li>
+                <li><a href="ch32_entities.html">Ch 32: Entities</a></li>
+                <li><a href="ch33_url_encoding.html">Ch 33: URL Encode</a></li>
+                <li><a href="ch34_lang_codes.html">Ch 34: Lang Codes</a></li>
+                <li><a href="ch35_char_sets.html">Ch 35: Char Sets</a></li>
+                <li><a href="ch36_http_status.html">Ch 36: HTTP Status</a></li>
+                <li><a href="ch37_mime_types.html">Ch 37: MIME Types</a></li>
+                <li><a href="ch38_deprecated.html" class="active"><i class="fa-solid fa-circle-check"></i> Ch 38: Deprecated</a></li>
+            </ul>
+        </aside>
+
+        <main class="content-area">
+            <h1>🚫 Chapter 38: Deprecated Tags & Attributes</h1>
+            <p>In tags ko ab kisi bhi naye project mein istemaal karna sakht mana hai. Ab yeh kaam CSS ka hai.</p>
+            <hr>
+            <h2>1. The Design Tags (Design wale Tags)</h2>
+            <p>Ye vo tags hain jo sirf text ko sundar banane ke liye use hote the. Ab ye kaam CSS ka hai.</p>
+            <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
+                <tr style="background: #f1f5f9;">
+                    <th style="padding: 10px; border: 1px solid #ddd;">Purana Tag</th>
+                    <th style="padding: 10px; border: 1px solid #ddd;">Naya (CSS/Semantic)</th>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #ddd;"><code>&lt;center&gt;</code></td>
+                    <td style="padding: 10px; border: 1px solid #ddd;"><code>text-align: center;</code></td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #ddd;"><code>&lt;font&gt;</code></td>
+                    <td style="padding: 10px; border: 1px solid #ddd;"><code>color</code> या <code>font-family</code></td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #ddd;"><code>&lt;strike&gt;</code></td>
+                    <td style="padding: 10px; border: 1px solid #ddd;"><code>&lt;del&gt;</code> या <code>&lt;s&gt;</code></td>
+                </tr>
+            </table>
+
+            <div class="note-box" style="margin-top: 30px; background: #f0fdf4; border-left: 5px solid #22c55e; padding: 15px;">
+                <strong>Badhaee ho!</strong> Aapne pooree HTML saphalataapoorvak seekh lee hai. Apna Certificate lene ke liye oopar diye gaye "Finish Course" button par click karein.
+            </div>
+        </main>
+    </div>
+
+    <script src="../script.js"></script>
+</body>
+</html>

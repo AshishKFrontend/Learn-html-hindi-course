@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 33: URL Encoding | Ashish Lab</title>
+    
+    <link rel="stylesheet" href="../style.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Fira+Code&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">
+            <a href="../index.html"><i class="fa-brands fa-html5"></i> Ashish<span>Lab</span></a>
+        </div>
+         <div class="menu-toggle" id="mobile-menu">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+        <ul class="nav-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="ch34_lang_codes.html" class="btn">Next Chapter <i class="fa-solid fa-arrow-right"></i></a></li>
+        </ul>
+    </nav>
+
+    <div class="chapter-layout">
+        
+        <aside class="sidebar">
+            <h3>Course Index</h3>
+            <ul style="max-height: 70vh; overflow-y: auto; padding-right: 5px;">
+                <li><a href="ch1_intro.html"><i class="fa-solid fa-check"></i> Ch 1: Overview</a></li>
+                <li><a href="ch2_basic_tags.html"><i class="fa-solid fa-check"></i> Ch 2: Basic Tags</a></li>
+                <li><a href="ch3_elements.html"><i class="fa-solid fa-check"></i> Ch 3: Elements</a></li>
+                <li><a href="ch4_attributes.html"><i class="fa-solid fa-check"></i> Ch 4: Attributes</a></li>
+                <li><a href="ch5_formatting.html"><i class="fa-solid fa-check"></i> Ch 5: Formatting</a></li>
+                <li><a href="ch6_phrase_tags.html"><i class="fa-solid fa-check"></i> Ch 6: Phrase Tags</a></li>
+                <li><a href="ch7_meta_tags.html"><i class="fa-solid fa-check"></i> Ch 7: Meta Tags</a></li>
+                <li><a href="ch8_comments.html"><i class="fa-solid fa-check"></i> Ch 8: Comments</a></li>
+                <li><a href="ch9_images.html"><i class="fa-solid fa-check"></i> Ch 9: Images</a></li>
+                <li><a href="ch10_tables.html"><i class="fa-solid fa-check"></i> Ch 10: Tables</a></li>
+                <li><a href="ch11_lists.html"><i class="fa-solid fa-check"></i> Ch 11: Lists</a></li>
+                <li><a href="ch12_text_links.html"><i class="fa-solid fa-check"></i> Ch 12: Text Links</a></li>
+                <li><a href="ch13_image_links.html"><i class="fa-solid fa-check"></i> Ch 13: Image Maps</a></li>
+                <li><a href="ch14_email_links.html"><i class="fa-solid fa-check"></i> Ch 14: Email Links</a></li>
+                <li><a href="ch15_frames.html"><i class="fa-solid fa-check"></i> Ch 15: Frames</a></li>
+                <li><a href="ch16_iframes.html"><i class="fa-solid fa-check"></i> Ch 16: Iframes</a></li>
+                <li><a href="ch17_blocks.html"><i class="fa-solid fa-check"></i> Ch 17: Div & Span</a></li>
+                <li><a href="ch18_backgrounds.html"><i class="fa-solid fa-check"></i> Ch 18: Backgrounds</a></li>
+                <li><a href="ch19_colors.html"><i class="fa-solid fa-check"></i> Ch 19: Color Models</a></li>
+                <li><a href="ch20_fonts.html"><i class="fa-solid fa-check"></i> Ch 20: Fonts</a></li>
+                <li><a href="ch21_forms.html"><i class="fa-solid fa-check"></i> Ch 21: Forms</a></li>
+                <li><a href="ch22_multimedia.html"><i class="fa-solid fa-check"></i> Ch 22: Multimedia</a></li>
+                <li><a href="ch23_marquee.html"><i class="fa-solid fa-check"></i> Ch 23: Marquee</a></li>
+                <li><a href="ch24_header.html"><i class="fa-solid fa-check"></i> Ch 24: Header Tags</a></li>
+                <li><a href="ch25_css.html"><i class="fa-solid fa-check"></i> Ch 25: CSS Setup</a></li>
+                <li><a href="ch26_javascript.html"><i class="fa-solid fa-check"></i> Ch 26: JavaScript</a></li>
+                <li><a href="ch27_layout.html"><i class="fa-solid fa-check"></i> Ch 27: Layouts</a></li>
+                <li><a href="ch28_mouse_events.html"><i class="fa-solid fa-check"></i> Ch 28: Mouse Events</a></li>
+                <li><a href="ch29_window_events.html"><i class="fa-solid fa-check"></i> Ch 29: Window Events</a></li>
+                <li><a href="ch30_form_events.html"><i class="fa-solid fa-check"></i> Ch 30: Form Events</a></li>
+                <li><a href="ch31_hardware_events.html"><i class="fa-solid fa-check"></i> Ch 31: Hardware</a></li>
+                <li><a href="ch32_entities.html"><i class="fa-solid fa-check"></i> Ch 32: Entities</a></li>
+                <li><a href="ch33_url_encoding.html" class="active"><i class="fa-solid fa-circle-check"></i> Ch 33: URL Encode</a></li>
+                <li><a href="ch34_lang_codes.html">Ch 34: Lang Codes</a></li>
+                <li><a href="ch35_char_sets.html">Ch 35: Char Sets</a></li>
+                <li><a href="ch36_http_status.html">Ch 36: HTTP Status</a></li>
+                <li><a href="ch37_mime_types.html">Ch 37: MIME Types</a></li>
+                <li><a href="ch38_deprecated.html">Ch 38: Deprecated</a></li>
+            </ul>
+        </aside>
+
+        <main class="content-area">
+            
+            <h1>🔗 Chapter 33: URL Encoding (Percent Encoding)</h1>
+            <p>URL Encoding ka matlab hai: <strong>"Unsafe characters ko % sign ke saath ek code mein badal dena."</strong> URLs sirf ASCII Characters hi samajh sakte hain.</p>
+            
+            <hr style="margin: 2rem 0; border: 0; border-top: 1px solid #eee;">
+
+            <h2>1. Kyun Zaroori Hai? (The Problem)</h2>
+            <p>URLs mein spaces aur special symbols allowed nahi hote. Agar aapne file ka naam rakha <code>My Resume.pdf</code>, toh browser confuse ho jayega kyunki Space ka matlab hota hai "URL khatam".</p>
+            
+            <div class="note-box" style="background: #fef2f2; border-left: 5px solid #ef4444; color: #991b1b;">
+                <strong>Problem:</strong> Browser space ke baad wale hisse ko ignore kar deta hai, jisse link toot (break) jata hai.
+            </div>
+
+            <h2>2. Kaise Kaam Karta Hai? (The Solution)</h2>
+            <p>Browser har unsafe character ko <strong>%</strong> aur uske <strong>Hexadecimal Code</strong> se badal deta hai.</p>
+            <ul>
+                <li><strong>Space ( ):</strong> ASCII code 32, Hex mein 20. Isliye ye ban jata hai <code>%20</code>.</li>
+            </ul>
+            
+            
+
+            <h2>3. Common Encoded Characters</h2>
+            <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
+                <thead style="background: #f1f5f9;">
+                    <tr>
+                        <th style="padding: 10px; border: 1px solid #ddd;">Character</th>
+                        <th style="padding: 10px; border: 1px solid #ddd;">Encoded Value</th>
+                        <th style="padding: 10px; border: 1px solid #ddd;">Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="padding: 10px; border: 1px solid #ddd;">Space ( )</td>
+                        <td style="padding: 10px; border: 1px solid #ddd;"><code>%20</code></td>
+                        <td style="padding: 10px; border: 1px solid #ddd;">Sabse common encoding.</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px; border: 1px solid #ddd;">Slash (/)</td>
+                        <td style="padding: 10px; border: 1px solid #ddd;"><code>%2F</code></td>
+                        <td style="padding: 10px; border: 1px solid #ddd;">Directory separator.</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px; border: 1px solid #ddd;">Question (?)</td>
+                        <td style="padding: 10px; border: 1px solid #ddd;"><code>%3F</code></td>
+                        <td style="padding: 10px; border: 1px solid #ddd;">Query string starter.</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px; border: 1px solid #ddd;">At (@)</td>
+                        <td style="padding: 10px; border: 1px solid #ddd;"><code>%40</code></td>
+                        <td style="padding: 10px; border: 1px solid #ddd;">Email address sign.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2>4. Encoding Functions</h2>
+            <p>Programming languages (JS, Python) mein manually %20 nahi likhna padta. JS mein do main functions hain:</p>
+            <ul>
+                <li><code>encodeURI()</code>: Poore URL ke liye.</li>
+                <li><code>encodeURIComponent()</code>: Kisi file name ya single value ke liye (Best).</li>
+            </ul>
+
+            <h2 style="margin-top: 3rem; color: var(--primary);">📝 Live Practice: URL Encoder Tool</h2>
+            <p>Niche input box mein kuch bhi likhein (jaise: <strong>Goa Trip 2026!</strong>) aur dekhein kaise wo URL-Safe code mein badal jata hai.</p>
+
+            <div class="live-editor">
+                <div class="editor-header">
+                    <span><i class="fa-solid fa-code"></i> Live Encoder Demo</span>
+                    <div class="editor-controls">
+                        <button class="btn-copy" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Copy</button>
+                        <button class="btn-run" onclick="runCode(this)"><i class="fa-solid fa-play"></i> Run</button>
+                    </div>
+                </div>
+                
+                <textarea class="code-input" spellcheck="false">
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  input { width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ccc; }
+  .result { background: #1e293b; color: #4ade80; padding: 15px; border-radius: 5px; font-family: monospace; word-break: break-all; }
+</style>
+</head>
+<body>
+
+    <h3>Try URL Encoding</h3>
+    <input type="text" id="userInput" placeholder="Type something with spaces or symbols..." oninput="encodeNow()">
+
+    <div class="result">
+        <strong>Encoded URL:</strong><br>
+        <span id="output">Nothing yet...</span>
+    </div>
+
+    <script>
+        function encodeNow() {
+            var val = document.getElementById('userInput').value;
+            var encoded = encodeURIComponent(val);
+            document.getElementById('output').innerHTML = encoded;
+        }
+    </script>
+
+</body>
+</html>
+                </textarea>
+
+                <div class="output-label">OUTPUT (Result)</div>
+                <iframe class="code-output"></iframe>
+            </div>
+
+            <div style="background: #1e293b; color: #fff; padding: 20px; border-radius: 12px; margin-top: 30px;">
+                <h3 style="color: white; margin-bottom: 15px;">💡 Summary Table</h3>
+                
+                <table style="width: 100%; color: #fff; background: transparent; box-shadow: none; border: none;">
+                    <thead style="background: rgba(255,255,255,0.1);">
+                        <tr>
+                            <th style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.2); background: transparent; color: #fff;">Feature</th>
+                            <th style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.2); background: transparent; color: #fff;">Description</th>
+                            <th style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.2); background: transparent; color: #fff;">Example</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.1);">Requirement</td>
+                            <td style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.1);">URLs only use ASCII.</td>
+                            <td style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.1);">No Hindi/Spaces allowed.</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.1);">Mechanism</td>
+                            <td style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.1);">Replace with % + Hex.</td>
+                            <td style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.1);">Space &rarr; <code>%20</code></td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.1);">Key Use</td>
+                            <td style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.1);">File names with spaces.</td>
+                            <td style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.1);"><code>img 1.jpg</code> &rarr; <code>img%201.jpg</code></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="chapter-nav">
+    <a href="ch32_entities.html" class="btn secondary">&larr; Prev</a>
+
+    <a href="ch34_lang_codes.html" class="btn">Next &rarr;</a>
+</div>
+        </main>
+    </div>
+
+    <script src="../script.js"></script>
+
+</body>
+</html>

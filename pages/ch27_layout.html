@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 27: HTML Layouts | Ashish Lab</title>
+    
+    <link rel="stylesheet" href="../style.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Fira+Code&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">
+            <a href="../index.html"><i class="fa-brands fa-html5"></i> Ashish<span>Lab</span></a>
+        </div>
+        <div class="menu-toggle" id="mobile-menu">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+        <ul class="nav-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="ch28_mouse_events.html" class="btn">Next Chapter <i class="fa-solid fa-arrow-right"></i></a></li>
+        </ul>
+    </nav>
+
+    <div class="chapter-layout">
+        
+        <aside class="sidebar">
+            <h3>Course Index</h3>
+            <ul style="max-height: 70vh; overflow-y: auto; padding-right: 5px;">
+                <li><a href="ch1_intro.html"><i class="fa-solid fa-check"></i> Ch 1: Overview</a></li>
+                <li><a href="ch2_basic_tags.html"><i class="fa-solid fa-check"></i> Ch 2: Basic Tags</a></li>
+                <li><a href="ch3_elements.html"><i class="fa-solid fa-check"></i> Ch 3: Elements</a></li>
+                <li><a href="ch4_attributes.html"><i class="fa-solid fa-check"></i> Ch 4: Attributes</a></li>
+                <li><a href="ch5_formatting.html"><i class="fa-solid fa-check"></i> Ch 5: Formatting</a></li>
+                <li><a href="ch6_phrase_tags.html"><i class="fa-solid fa-check"></i> Ch 6: Phrase Tags</a></li>
+                <li><a href="ch7_meta_tags.html"><i class="fa-solid fa-check"></i> Ch 7: Meta Tags</a></li>
+                <li><a href="ch8_comments.html"><i class="fa-solid fa-check"></i> Ch 8: Comments</a></li>
+                <li><a href="ch9_images.html"><i class="fa-solid fa-check"></i> Ch 9: Images</a></li>
+                <li><a href="ch10_tables.html"><i class="fa-solid fa-check"></i> Ch 10: Tables</a></li>
+                <li><a href="ch11_lists.html"><i class="fa-solid fa-check"></i> Ch 11: Lists</a></li>
+                <li><a href="ch12_text_links.html"><i class="fa-solid fa-check"></i> Ch 12: Text Links</a></li>
+                <li><a href="ch13_image_links.html"><i class="fa-solid fa-check"></i> Ch 13: Image Maps</a></li>
+                <li><a href="ch14_email_links.html"><i class="fa-solid fa-check"></i> Ch 14: Email Links</a></li>
+                <li><a href="ch15_frames.html"><i class="fa-solid fa-check"></i> Ch 15: Frames</a></li>
+                <li><a href="ch16_iframes.html"><i class="fa-solid fa-check"></i> Ch 16: Iframes</a></li>
+                <li><a href="ch17_blocks.html"><i class="fa-solid fa-check"></i> Ch 17: Div & Span</a></li>
+                <li><a href="ch18_backgrounds.html"><i class="fa-solid fa-check"></i> Ch 18: Backgrounds</a></li>
+                <li><a href="ch19_colors.html"><i class="fa-solid fa-check"></i> Ch 19: Color Models</a></li>
+                <li><a href="ch20_fonts.html"><i class="fa-solid fa-check"></i> Ch 20: Fonts</a></li>
+                <li><a href="ch21_forms.html"><i class="fa-solid fa-check"></i> Ch 21: Forms</a></li>
+                <li><a href="ch22_multimedia.html"><i class="fa-solid fa-check"></i> Ch 22: Multimedia</a></li>
+                <li><a href="ch23_marquee.html"><i class="fa-solid fa-check"></i> Ch 23: Marquee</a></li>
+                <li><a href="ch24_header.html"><i class="fa-solid fa-check"></i> Ch 24: Header Tags</a></li>
+                <li><a href="ch25_css.html"><i class="fa-solid fa-check"></i> Ch 25: CSS Setup</a></li>
+                <li><a href="ch26_javascript.html"><i class="fa-solid fa-check"></i> Ch 26: JavaScript</a></li>
+                <li><a href="ch27_layout.html" class="active"><i class="fa-solid fa-circle-check"></i> Ch 27: Layouts</a></li>
+                <li><a href="ch28_mouse_events.html">Ch 28: Mouse Events</a></li>
+                <li><a href="ch29_window_events.html">Ch 29: Window Events</a></li>
+                <li><a href="ch30_form_events.html">Ch 30: Form Events</a></li>
+                <li><a href="ch31_hardware_events.html">Ch 31: Hardware</a></li>
+                <li><a href="ch32_entities.html">Ch 32: Entities</a></li>
+                <li><a href="ch33_url_encoding.html">Ch 33: URL Encode</a></li>
+                <li><a href="ch34_lang_codes.html">Ch 34: Lang Codes</a></li>
+                <li><a href="ch35_char_sets.html">Ch 35: Char Sets</a></li>
+                <li><a href="ch36_http_status.html">Ch 36: HTTP Status</a></li>
+                <li><a href="ch37_mime_types.html">Ch 37: MIME Types</a></li>
+                <li><a href="ch38_deprecated.html">Ch 38: Deprecated</a></li>
+            </ul>
+        </aside>
+
+        <main class="content-area">
+            
+            <h1>🏗️ Chapter 27: HTML Layout Techniques</h1>
+            <p>Layout ka matlab hai website ke alag-alag hisson (Header, Sidebar, Content, Footer) ko sahi jagah par set karna. Ek accha layout website ko sundar aur use karne mein aasaan banata hai.</p>
+            
+            <hr style="margin: 2rem 0; border: 0; border-top: 1px solid #eee;">
+
+            <h2>Layout Banane Ke Tareeke</h2>
+            <ul style="list-style: none; padding: 0;">
+                <li style="background: #f8fafc; padding: 15px; margin-bottom: 10px; border-left: 4px solid #64748b;">
+                    <strong>1. Table-based Layout (Purana):</strong> Pehle log <code>&lt;table&gt;</code> ka use karke layout banate the, par ye SEO ke liye bura hai aur mobile par sahi nahi dikhta.
+                </li>
+                <li style="background: #f8fafc; padding: 15px; margin-bottom: 10px; border-left: 4px solid #3b82f6;">
+                    <strong>2. Div-based Layout (Common):</strong> <code>&lt;div&gt;</code> aur CSS ka use karke boxes banaye jate hain. Ye flexible hota hai par isme "Semantics" (matlab) ki kami hoti hai.
+                </li>
+                <li style="background: #f0fdf4; padding: 15px; margin-bottom: 10px; border-left: 4px solid #22c55e;">
+                    <strong>3. HTML5 Semantic Layout (Modern & Best):</strong> HTML5 ne naye tags diye hain jo browser ko batate hain ki page ka kaunsa hissa kya hai.
+                </li>
+            </ul>
+
+            
+
+            <h2>HTML5 Semantic Tags</h2>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 15px;">
+                <div style="padding: 10px; border: 1px dashed #ccc;"><code>&lt;header&gt;</code>: Logo aur top links.</div>
+                <div style="padding: 10px; border: 1px dashed #ccc;"><code>&lt;nav&gt;</code>: Navigation links.</div>
+                <div style="padding: 10px; border: 1px dashed #ccc;"><code>&lt;section&gt;</code>: Content ka main part.</div>
+                <div style="padding: 10px; border: 1px dashed #ccc;"><code>&lt;aside&gt;</code>: Sidebar (extra info).</div>
+                <div style="padding: 10px; border: 1px dashed #ccc;"><code>&lt;footer&gt;</code>: Copyright/Contact info.</div>
+            </div>
+
+            <h2 style="margin-top: 3rem; color: var(--primary);">📝 Master Example: Professional Blog Layout</h2>
+            <p>Niche ek modern blog layout ka code hai. Ise <strong>Run</strong> karein aur dekhein ki kaise Semantic tags ek poora dhancha taiyar karte hain.</p>
+
+            <div class="live-editor">
+                <div class="editor-header">
+                    <span><i class="fa-solid fa-code"></i> Live Layout Demo</span>
+                    <div class="editor-controls">
+                        <button class="btn-copy" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Copy</button>
+                        <button class="btn-run" onclick="runCode(this)"><i class="fa-solid fa-play"></i> Run</button>
+                    </div>
+                </div>
+                
+                <textarea class="code-input" spellcheck="false">
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  body { font-family: sans-serif; margin: 0; }
+  header { background: #1e293b; color: white; padding: 20px; text-align: center; }
+  nav { background: #334155; padding: 10px; text-align: center; }
+  nav a { color: white; margin: 10px; text-decoration: none; }
+  section { float: left; width: 70%; padding: 20px; box-sizing: border-box; }
+  aside { float: left; width: 30%; background: #f1f5f9; padding: 20px; box-sizing: border-box; min-height: 200px; }
+  footer { clear: both; background: #1e293b; color: white; text-align: center; padding: 10px; }
+  @media (max-width: 600px) { section, aside { width: 100%; } }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Ashish's Tech Blog</h1>
+</header>
+
+<nav>
+  <a href="#">Home</a> | <a href="#">Python</a> | <a href="#">HTML</a>
+</nav>
+
+<section>
+  <h2>Layout Seekhein</h2>
+  <p>HTML5 semantic tags se website ka dhancha (structure) banta hai. Ye SEO ke liye sabse best maana jata hai.</p>
+</section>
+
+<aside>
+  <h3>About Me</h3>
+  <p>Main Mau se hoon aur coding seekh raha hoon.</p>
+</aside>
+
+<footer>
+  <p>&copy; 2026 Ashish Coding Lab</p>
+</footer>
+
+</body>
+</html>
+                </textarea>
+
+                <div class="output-label">OUTPUT (Result)</div>
+                <iframe class="code-output"></iframe>
+            </div>
+
+            <div style="background: #1e293b; color: #fff; padding: 20px; border-radius: 12px; margin-top: 30px;">
+                <h3 style="color: white; margin-bottom: 15px;">📊 Summary Table: Integration & Layouts</h3>
+                
+                <table style="width: 100%; color: #fff; background: transparent; box-shadow: none; border: none;">
+                    <thead style="background: rgba(255,255,255,0.1);">
+                        <tr>
+                            <th style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.2); background: transparent; color: #fff;">Concept</th>
+                            <th style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.2); background: transparent; color: #fff;">Technique</th>
+                            <th style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.2); background: transparent; color: #fff;">Best For...</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.1);">CSS Integration</td>
+                            <td style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.1);">External Link</td>
+                            <td style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.1);">Professional websites.</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.1);">JS Placement</td>
+                            <td style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.1);">Bottom of Body</td>
+                            <td style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.1);">Page loading speed badhane ke liye.</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.1);">Layout</td>
+                            <td style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.1);">HTML5 Semantic Tags</td>
+                            <td style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.1);">SEO aur modern standards ke liye.</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.1);">Container</td>
+                            <td style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.1);">Div / Section</td>
+                            <td style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.1);">Grouping aur styling ke liye.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="chapter-nav">
+    <a href="ch26_javascript.html" class="btn secondary">&larr; Prev</a>
+
+    <a href="ch28_mouse_events.html" class="btn">Next &rarr;</a>
+</div>
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Ashish Code Lab. Made with ❤️ in Mau, UP.</p>
+    </footer>
+
+    <script src="../script.js"></script>
+
+</body>
+</html>

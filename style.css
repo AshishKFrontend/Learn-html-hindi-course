@@ -1,0 +1,868 @@
+/* =========================================
+   1. DESIGN TOKENS & RESET
+   ========================================= */
+:root {
+    /* --- Brand Colors --- */
+    --primary: #6366f1;       /* Indigo */
+    --primary-dark: #4f46e5;
+    --secondary: #f97316;     /* Orange */
+    
+    /* --- Functional Colors (Status) --- */
+    --status-success: #22c55e;
+    --status-success-hover: #16a34a;
+    --status-info-bg: #eff6ff;
+    
+    /* --- Editor & Code Theme --- */
+    --editor-bg: #0f172a;
+    --editor-header: #1e293b;
+    --editor-text: #9af705;
+    --btn-secondary: #475569;
+    --btn-secondary-hover: #334155;
+    --output-label-bg: #f1f5f9;
+
+    /* --- Backgrounds & Surfaces --- */
+    --bg-main: #f8fafc;       /* Body Background */
+    --bg-surface: #ffffff;    /* Cards/Sidebar */
+    --bg-footer-start: #f8fafc;
+    --bg-footer-end: #e2e8f0;
+
+    /* --- Typography Colors --- */
+    --text-dark: #1e293b;     /* Headings */
+    --text-light: #64748b;    /* Body text */
+    --text-white: #ffffff;
+    --border-light: #e2e8f0;
+
+    /* --- Typography Families --- */
+    --font-primary: 'Poppins', sans-serif;
+    --font-code: 'Fira Code', monospace;
+
+    /* --- Modern Effects (Glassmorphism & Shadows) --- */
+    --glass-bg: rgba(255, 255, 255, 0.85);
+    --glass-border: 1px solid rgba(255, 255, 255, 0.3);
+    --blur-effect: blur(12px);
+    
+    --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.04);
+    --shadow-hover: 0 20px 25px -5px rgba(99, 102, 241, 0.15), 0 8px 10px -6px rgba(99, 102, 241, 0.1);
+    
+    /* --- Layout & Spacing --- */
+    --radius-sm: 6px;
+    --radius-md: 8px;
+    --radius-lg: 16px;
+    --radius-full: 9999px;
+    --header-height: 80px; /* Estimated */
+    --z-navbar: 1000;
+}
+
+/* --- Base Reset --- */
+html {
+    scroll-behavior: smooth;
+    /* X-axis scroll ko rokne ke liye */
+    overflow-x: hidden; 
+}
+
+::selection {
+    background: var(--primary);
+    color: var(--text-white);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-primary);
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-light);
+    line-height: 1.7;
+    background-image:
+        radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.05) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(249, 115, 22, 0.08) 0px, transparent 50%);
+    background-attachment: fixed;
+    /* Extra space ko screen se bahar jaane se rokta hai */
+    width: 100%;
+    overflow-x: hidden;
+    position: relative;
+}
+
+h1, h2, h3, h4 {
+    color: var(--text-dark);
+    font-weight: 600;
+    letter-spacing: -0.5px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: 0.3s ease;
+}
+
+ul {
+    list-style: none;
+}
+
+/* =========================================
+   2. NAVBAR (Glassmorphism)
+   ========================================= */
+.navbar {
+    background: var(--glass-bg);
+    backdrop-filter: var(--blur-effect);
+    -webkit-backdrop-filter: var(--blur-effect);
+    border-bottom: var(--glass-border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    position: sticky;
+    top: 0;
+    z-index: var(--z-navbar);
+}
+
+.logo {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo i {
+    color: var(--secondary);
+    font-size: 2rem;
+}
+
+.logo span {
+    color: var(--primary);
+}
+
+/* --- NEW: Menu Toggle (Default Hidden) --- */
+.menu-toggle {
+    display: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: var(--text-dark);
+}
+
+.nav-links {
+    display: flex;
+    gap: 2.5rem;
+    align-items: center;
+}
+
+.nav-links a {
+    font-weight: 500;
+    font-size: 0.95rem;
+    position: relative;
+}
+
+/* Navigation Underline Animation */
+.nav-links a:not(.btn)::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: var(--primary);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:not(.btn):hover {
+    color: var(--primary);
+}
+
+.nav-links a:not(.btn):hover::after {
+    width: 100%;
+}
+
+/* --- Components: Buttons --- */
+.btn {
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    color: var(--text-white) !important;
+    padding: 0.7rem 1.8rem;
+    border-radius: var(--radius-full);
+    font-weight: 600;
+    box-shadow: var(--shadow-sm);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px -10px rgba(99, 102, 241, 0.5);
+}
+
+/* =========================================
+   3. HERO SECTION
+   ========================================= */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 6rem 5% 4rem;
+    /* Mesh Gradient Background */
+    background:
+        linear-gradient(120deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0) 100%),
+        radial-gradient(circle at 20% 50%, rgba(99, 102, 241, 0.1) 0%, transparent 70%),
+        radial-gradient(circle at 80% 30%, rgba(249, 115, 22, 0.1) 0%, transparent 70%);
+}
+
+.hero-text {
+    max-width: 600px;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+}
+
+.hero p {
+    margin-bottom: 2rem;
+    font-size: 1.15rem;
+    opacity: 0.9;
+}
+
+/* Floating Image Animation */
+.hero-img img {
+    width: 100%;
+    max-width: 450px;
+    filter: drop-shadow(0 20px 30px rgba(99, 102, 241, 0.2));
+    animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0px); }
+}
+
+/* =========================================
+   4. CURRICULUM & CARDS
+   ========================================= */
+#curriculum {
+    padding: 4rem 5%;
+}
+
+#curriculum h2 {
+    font-size: 2.2rem;
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#curriculum h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: var(--secondary);
+    margin: 10px auto 0;
+    border-radius: var(--radius-full);
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+/* --- Card Design --- */
+.card {
+    background: var(--bg-surface);
+    padding: 2rem;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    border: 1px solid rgba(99, 102, 241, 0.05);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: var(--shadow-hover);
+    border-color: rgba(99, 102, 241, 0.3);
+}
+
+/* Top Gradient Line */
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.card:hover::before {
+    opacity: 1;
+}
+
+.card-icon {
+    font-size: 2.2rem;
+    color: var(--text-white);
+    margin-bottom: 1.5rem;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-lg);
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    box-shadow: var(--shadow-sm);
+}
+
+/* Phase Colors (Nth Child Logic) */
+.card:nth-child(n+5) .card-icon {
+    background: linear-gradient(135deg, #06b6d4, #0e7490);
+}
+
+.card:nth-child(n+17) .card-icon {
+    background: linear-gradient(135deg, #8b5cf6, #6d28d9);
+}
+
+.card:nth-child(n+24) .card-icon {
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+}
+
+.card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.8rem;
+}
+
+.card p {
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+    flex-grow: 1;
+}
+
+.read-link {
+    color: var(--primary);
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.95rem;
+    transition: gap 0.3s ease;
+}
+
+.read-link:hover {
+    gap: 10px;
+    color: var(--primary-dark);
+}
+
+/* =========================================
+   5. CHAPTER LAYOUT & SIDEBAR
+   ========================================= */
+.chapter-layout {
+    display: flex;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem 5%;
+    gap: 3rem;
+    align-items: flex-start;
+}
+
+.sidebar {
+    flex: 1;
+    background: var(--bg-surface);
+    padding: 1.5rem;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid rgba(99, 102, 241, 0.05);
+    position: sticky;
+    top: 100px;
+    min-width: 250px;
+}
+
+.sidebar h3 {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: var(--primary);
+}
+
+.sidebar li {
+    margin-bottom: 0.5rem;
+}
+
+.sidebar a {
+    display: block;
+    padding: 10px;
+    border-radius: var(--radius-md);
+    font-size: 0.9rem;
+    color: var(--text-light);
+    transition: 0.2s;
+}
+
+.sidebar a:hover,
+.sidebar a.active {
+    background: linear-gradient(90deg, rgba(99, 102, 241, 0.1), transparent);
+    color: var(--primary);
+    font-weight: 600;
+    border-left: 3px solid var(--primary);
+}
+
+/* =========================================
+   6. MAIN CONTENT AREA
+   ========================================= */
+.content-area {
+    flex: 3;
+    background: var(--bg-surface);
+    padding: 3rem;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid rgba(99, 102, 241, 0.05);
+}
+
+.content-area h1 {
+    font-size: 2.2rem;
+    color: var(--primary-dark);
+    margin-bottom: 1rem;
+}
+
+.content-area h2 {
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--text-dark);
+    border-left: 5px solid var(--secondary);
+    padding-left: 15px;
+}
+
+.content-area p,
+.content-area li {
+    font-size: 1.05rem;
+    margin-bottom: 1rem;
+    color: var(--text-light);
+}
+
+/* --- Note Components --- */
+.note-box {
+    background: var(--status-info-bg);
+    border-left: 4px solid var(--primary);
+    padding: 15px;
+    border-radius: var(--radius-md);
+    margin: 20px 0;
+}
+
+/* --- Tables --- */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background: var(--bg-surface);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+th {
+    background: var(--primary);
+    color: var(--text-white);
+}
+
+/* =========================================
+   7. LIVE EDITOR & TOOLS
+   ========================================= */
+.live-editor {
+    border: 1px solid var(--border-light);
+    border-radius: 12px;
+    overflow: hidden;
+    margin: 2rem 0;
+    box-shadow: var(--shadow-md);
+}
+
+.editor-header {
+    background: var(--editor-header);
+    color: var(--text-white);
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.editor-controls {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-run,
+.btn-copy {
+    border: none;
+    padding: 6px 15px;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: 0.2s;
+}
+
+.btn-run {
+    background: var(--status-success);
+    color: var(--text-white);
+}
+
+.btn-run:hover {
+    background: var(--status-success-hover);
+}
+
+.btn-copy {
+    background: var(--btn-secondary);
+    color: var(--text-white);
+}
+
+.btn-copy:hover {
+    background: var(--btn-secondary-hover);
+}
+
+textarea.code-input {
+    width: 100%;
+    height: 180px;
+    background: var(--editor-bg);
+    color: var(--editor-text);
+    border: none;
+    padding: 20px;
+    font-family: var(--font-code);
+    font-size: 0.95rem;
+    resize: vertical;
+    outline: none;
+}
+
+.output-label {
+    background: var(--output-label-bg);
+    color: var(--text-light);
+    padding: 5px 20px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    border-top: 1px solid var(--border-light);
+    border-bottom: 1px solid var(--border-light);
+}
+
+iframe.code-output {
+    width: 100%;
+    height: 150px;
+    border: none;
+    resize: vertical;
+    background: var(--bg-surface);
+}
+
+/* =========================================
+   8. FOOTER
+   ========================================= */
+footer {
+    text-align: center;
+    padding: 3rem 2rem;
+    background: linear-gradient(to bottom, var(--bg-footer-start), var(--bg-footer-end));
+    color: var(--text-dark);
+    margin-top: 4rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    font-weight: 500;
+}
+
+/* =========================================
+   9. RESPONSIVENESS & UTILITIES
+   ========================================= */
+
+/* Utility: Summary Table Fix */
+.content-area div[style*="background: #1e293b"] table {
+    background-color: transparent !important;
+    box-shadow: none !important;
+}
+
+.content-area div[style*="background: #1e293b"] th,
+.content-area div[style*="background: #1e293b"] td {
+    color: var(--text-white) !important;
+    background-color: transparent !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
+    border-top: none !important;
+    border-left: none !important;
+    border-right: none !important;
+}
+
+/* =========================================
+   MOBILE RESPONSIVE STYLES (CORRECTED)
+   ========================================= */
+@media (max-width: 768px) {
+
+    /* --- 1. NAVBAR & MENU LOGIC --- */
+    .menu-toggle {
+        display: block; /* Show hamburger on mobile */
+    }
+
+    .nav-links {
+        display: flex; /* Flex is needed for layout, but position handles visibility */
+        position: fixed;
+        top: 70px; /* Below navbar */
+        right: -100%; /* Hide off-screen */
+        width: 100%;
+        height: auto;
+        background: var(--glass-bg);
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+        flex-direction: column;
+        align-items: center;
+        padding: 2rem 0;
+        box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+        transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        border-bottom: 1px solid var(--border-light);
+        z-index: 999;
+        /* Menu chupa rahe aur layout disturb na kare jab band ho */
+        visibility: hidden; 
+    }
+
+    .nav-links.active {
+        right: 0; /* Slide in */
+        visibility: visible;
+    }
+
+    .nav-links li {
+        margin: 15px 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    /* --- 2. LAYOUT ADJUSTMENTS --- */
+    .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding-top: 3rem;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-img img {
+        width: 70%;
+        margin-bottom: 2rem;
+    }
+
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+
+    .chapter-layout {
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    /* --- 3. HORIZONTAL SCROLL SIDEBAR --- */
+    .sidebar {
+        width: 100%;
+        position: static;
+        margin-bottom: 1rem;
+        padding: 10px;
+        z-index: 5;
+    }
+    
+    .sidebar ul {
+        display: flex;
+        overflow-x: auto; /* Enable Horizontal Scroll */
+        padding-bottom: 10px;
+        gap: 10px;
+        scrollbar-width: none; /* Firefox hide scrollbar */
+        -webkit-overflow-scrolling: touch; /* Smooth iOS scroll */
+    }
+    
+    .sidebar ul::-webkit-scrollbar {
+        display: none; /* Chrome hide scrollbar */
+    }
+
+    .sidebar ul li {
+        flex: 0 0 auto;
+        margin: 0;
+    }
+    
+    .sidebar ul li a {
+        background: #f1f5f9;
+        padding: 8px 16px;
+        border-radius: 20px;
+        white-space: nowrap;
+        font-size: 0.85rem;
+        display: block;
+        border: 1px solid transparent;
+    }
+    
+    .sidebar ul li a.active {
+        background: var(--primary);
+        color: white;
+        border-color: var(--primary);
+        border-left: 1px solid transparent; /* Remove sidebar border logic */
+    }
+    
+    /* Button Adjustments */
+    #cert-btn {
+        margin-top: 10px;
+        width: auto;
+        white-space: nowrap;
+    }
+
+    /* --- 4. CONTENT & EDITOR --- */
+    .content-area {
+        padding: 1.5rem;
+        width: 100%;
+    }
+    
+    .live-editor {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .code-input, 
+    iframe.code-output {
+        height: 200px;
+        width: 100%;
+    }
+}
+/* ============================
+   CHAPTER NAVIGATION BUTTONS (FIXED)
+   ============================ */
+
+/* 1. DESKTOP STYLES (Ye Desktop par button ko sahi karega) */
+.chapter-nav {
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Zaroori: Button ko vertically center aur fit rakhta hai */
+    gap: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+/* "Home" Button (Grey Color fix) */
+.chapter-nav .btn.secondary {
+    background: #64748b !important; /* Purple gradient hatane ke liye !important */
+    background-image: none !important;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.chapter-nav .btn.secondary:hover {
+    background: #475569 !important; /* Hover par dark grey */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 10px rgba(0,0,0,0.15);
+}
+
+/* 2. MOBILE STYLES (Sirf Mobile par chota karega) */
+@media (max-width: 768px) {
+    .chapter-nav {
+        gap: 10px; /* Gap kam karein */
+    }
+
+    .chapter-nav .btn {
+        padding: 10px 10px !important; /* Size compact karein */
+        font-size: 0.85rem !important; /* Text chota */
+        flex: 1; /* Dono buttons barabar width lein */
+        justify-content: center; /* Text beech me */
+        height: auto; /* Height fix na ho */
+        width: 100%;
+    }
+}
+/* Sirf Mobile ke liye adjustments */
+/* --- MOBILE MENU FIX --- */
+@media (max-width: 768px) {
+    /* Pehle jo display: none tha use block kar diya gaya hai */
+    #mobile-menu {
+        display: block !important; 
+        cursor: pointer;
+        z-index: 1002;
+    }
+
+    .nav-actions {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    /* Taaki menu open hone par sabke upar dikhe */
+    .nav-links.active {
+        display: flex !important;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: white;
+        box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+        z-index: 1001;
+    }
+}
+
+/* 3. Desktop par mobile-only button ko hide rakhein */
+@media (min-width: 769px) {
+    .finish-btn-mobile {
+        display: none;
+    }
+}
+/* --- High-Contrast Professional Dark Theme --- */
+body.dark-theme {
+    --bg-main: #1e1e1e;           /* Charcoal Background */
+    --bg-surface: #252526;        /* Cards/Sidebar Surface */
+    --text-dark: #ffffff;         /* Headings */
+    --text-light: #d4d4d4;        /* Soft Gray Text */
+    --border-light: #3e3e42;      /* Separators */
+    --primary: #6366f1;           /* Indigo Accent */
+}
+
+/* Chapters & Content Area */
+body.dark-theme .content-area {
+    background-color: #1e1e1e !important;
+}
+
+body.dark-theme .sidebar {
+    background-color: #252526 !important;
+}
+
+/* --- LIVE EDITOR DARK MODE (Important) --- */
+body.dark-theme .live-editor {
+    border-color: #3e3e42;
+}
+
+/* Input Area (Dark) */
+body.dark-theme textarea.code-input {
+    background: #1e1e1e !important;
+    color: #9af705 !important;
+    border-bottom: 1px solid #3e3e42;
+}
+
+/* Output Area (Hamesha White Rakhega) */
+body.dark-theme iframe.code-output {
+    background-color: #ffffff !important; /* Ye hamesha white rahega */
+}
+
+/* Output Label Fix */
+body.dark-theme .output-label {
+    background: #f1f5f9 !important; /* Light gray label taaki output se alag dikhe */
+    color: #475569 !important;
+}
+
+/* Sidebar Links Fix */
+body.dark-theme .sidebar ul li a {
+    color: #cccccc;
+}
+
+body.dark-theme .sidebar ul li a.active {
+    background: linear-gradient(90deg, rgba(99, 102, 241, 0.2), transparent);
+    color: var(--primary);
+    border-left: 3px solid var(--primary);
+}

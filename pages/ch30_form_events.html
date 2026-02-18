@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 30: Form Events | Ashish Lab</title>
+    
+    <link rel="stylesheet" href="../style.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Fira+Code&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">
+            <a href="../index.html"><i class="fa-brands fa-html5"></i> Ashish<span>Lab</span></a>
+        </div>
+        <div class="menu-toggle" id="mobile-menu">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+        <ul class="nav-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="ch31_hardware_events.html" class="btn">Next Chapter <i class="fa-solid fa-arrow-right"></i></a></li>
+        </ul>
+    </nav>
+
+    <div class="chapter-layout">
+        
+        <aside class="sidebar">
+            <h3>Course Index</h3>
+            <ul style="max-height: 70vh; overflow-y: auto; padding-right: 5px;">
+                <li><a href="ch1_intro.html"><i class="fa-solid fa-check"></i> Ch 1: Overview</a></li>
+                <li><a href="ch2_basic_tags.html"><i class="fa-solid fa-check"></i> Ch 2: Basic Tags</a></li>
+                <li><a href="ch3_elements.html"><i class="fa-solid fa-check"></i> Ch 3: Elements</a></li>
+                <li><a href="ch4_attributes.html"><i class="fa-solid fa-check"></i> Ch 4: Attributes</a></li>
+                <li><a href="ch5_formatting.html"><i class="fa-solid fa-check"></i> Ch 5: Formatting</a></li>
+                <li><a href="ch6_phrase_tags.html"><i class="fa-solid fa-check"></i> Ch 6: Phrase Tags</a></li>
+                <li><a href="ch7_meta_tags.html"><i class="fa-solid fa-check"></i> Ch 7: Meta Tags</a></li>
+                <li><a href="ch8_comments.html"><i class="fa-solid fa-check"></i> Ch 8: Comments</a></li>
+                <li><a href="ch9_images.html"><i class="fa-solid fa-check"></i> Ch 9: Images</a></li>
+                <li><a href="ch10_tables.html"><i class="fa-solid fa-check"></i> Ch 10: Tables</a></li>
+                <li><a href="ch11_lists.html"><i class="fa-solid fa-check"></i> Ch 11: Lists</a></li>
+                <li><a href="ch12_text_links.html"><i class="fa-solid fa-check"></i> Ch 12: Text Links</a></li>
+                <li><a href="ch13_image_links.html"><i class="fa-solid fa-check"></i> Ch 13: Image Maps</a></li>
+                <li><a href="ch14_email_links.html"><i class="fa-solid fa-check"></i> Ch 14: Email Links</a></li>
+                <li><a href="ch15_frames.html"><i class="fa-solid fa-check"></i> Ch 15: Frames</a></li>
+                <li><a href="ch16_iframes.html"><i class="fa-solid fa-check"></i> Ch 16: Iframes</a></li>
+                <li><a href="ch17_blocks.html"><i class="fa-solid fa-check"></i> Ch 17: Div & Span</a></li>
+                <li><a href="ch18_backgrounds.html"><i class="fa-solid fa-check"></i> Ch 18: Backgrounds</a></li>
+                <li><a href="ch19_colors.html"><i class="fa-solid fa-check"></i> Ch 19: Color Models</a></li>
+                <li><a href="ch20_fonts.html"><i class="fa-solid fa-check"></i> Ch 20: Fonts</a></li>
+                <li><a href="ch21_forms.html"><i class="fa-solid fa-check"></i> Ch 21: Forms</a></li>
+                <li><a href="ch22_multimedia.html"><i class="fa-solid fa-check"></i> Ch 22: Multimedia</a></li>
+                <li><a href="ch23_marquee.html"><i class="fa-solid fa-check"></i> Ch 23: Marquee</a></li>
+                <li><a href="ch24_header.html"><i class="fa-solid fa-check"></i> Ch 24: Header Tags</a></li>
+                <li><a href="ch25_css.html"><i class="fa-solid fa-check"></i> Ch 25: CSS Setup</a></li>
+                <li><a href="ch26_javascript.html"><i class="fa-solid fa-check"></i> Ch 26: JavaScript</a></li>
+                <li><a href="ch27_layout.html"><i class="fa-solid fa-check"></i> Ch 27: Layouts</a></li>
+                <li><a href="ch28_mouse_events.html"><i class="fa-solid fa-check"></i> Ch 28: Mouse Events</a></li>
+                <li><a href="ch29_window_events.html"><i class="fa-solid fa-check"></i> Ch 29: Window Events</a></li>
+                <li><a href="ch30_form_events.html" class="active"><i class="fa-solid fa-circle-check"></i> Ch 30: Form Events</a></li>
+                <li><a href="ch31_hardware_events.html">Ch 31: Hardware</a></li>
+                <li><a href="ch32_entities.html">Ch 32: Entities</a></li>
+                <li><a href="ch33_url_encoding.html">Ch 33: URL Encode</a></li>
+                <li><a href="ch34_lang_codes.html">Ch 34: Lang Codes</a></li>
+                <li><a href="ch35_char_sets.html">Ch 35: Char Sets</a></li>
+                <li><a href="ch36_http_status.html">Ch 36: HTTP Status</a></li>
+                <li><a href="ch37_mime_types.html">Ch 37: MIME Types</a></li>
+                <li><a href="ch38_deprecated.html">Ch 38: Deprecated</a></li>
+            </ul>
+        </aside>
+
+        <main class="content-area">
+            
+            <h1>📝 Chapter 30: Form Events</h1>
+            <p>In events ka sequence samajhna zaroori hai: Pehle user field mein aata hai <strong>(Focus)</strong>, phir kuch likhta hai <strong>(Change)</strong>, phir bahar nikalta hai <strong>(Blur)</strong>, aur ant mein form bhejta hai <strong>(Submit)</strong>.</p>
+            
+            <hr style="margin: 2rem 0; border: 0; border-top: 1px solid #eee;">
+
+            <h2>1. onfocus (Cursor Andar Aana)</h2>
+            <p>Ye event tab fire hota hai jab user mouse se kisi input box par click karta hai ya Tab button daba kar uspar pahunchta hai.</p>
+            <ul>
+                <li><strong>Real Life Use:</strong> Input box ka background color badal dena taaki user ko pata chale ki wo abhi kahan likh raha hai (Highlighting).</li>
+            </ul>
+
+            <div style="background: #1e293b; color: #e2e8f0; padding: 15px; border-radius: 8px; font-family: 'Fira Code', monospace; margin-top: 15px;">
+&lt;input type="text" onfocus="this.style.background='yellow'"&gt;
+            </div>
+
+            <h2>2. onblur (Cursor Bahar Jana)</h2>
+            <p>Ye <code>onfocus</code> ka ulta hai. Jab user input box se bahar click karta hai ya agle box par chala jata hai.</p>
+            <ul>
+                <li><strong>Real Life Use:</strong> Email format check karna ya field khali toh nahi reh gayi, ye turant batana.</li>
+            </ul>
+
+            <div style="background: #1e293b; color: #e2e8f0; padding: 15px; border-radius: 8px; font-family: 'Fira Code', monospace;">
+&lt;input type="text" onblur="this.style.background='white'"&gt;
+            </div>
+
+            <h2>3. onchange (Value Badalna)</h2>
+            <p>Ye tab fire hota hai jab user value badal kar element se bahar nikal jata hai. Dropdowns aur Checkboxes mein ye turant kaam karta hai.</p>
+            
+            
+
+            <h2>4. onsubmit (The Gatekeeper)</h2>
+            <p>Ye event <code>&lt;form&gt;</code> tag par lagaya jata hai. Agar ye <code>return false</code> karega, toh form submit nahi hoga.</p>
+
+            <h2 style="margin-top: 3rem; color: var(--primary);">🚀 Live Practice: Form Validator</h2>
+            <p>Niche ke form ko test karein:
+            <br>1. Naam wale box par click karein (Focus).
+            <br>2. Kuch likh kar bahar click karein (Blur).
+            <br>3. Khali password ke saath submit karke dekhein (Submit Blocked).</p>
+
+            <div class="live-editor">
+                <div class="editor-header">
+                    <span><i class="fa-solid fa-code"></i> Live Form Demo</span>
+                    <div class="editor-controls">
+                        <button class="btn-copy" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Copy</button>
+                        <button class="btn-run" onclick="runCode(this)"><i class="fa-solid fa-play"></i> Run</button>
+                    </div>
+                </div>
+                
+                <textarea class="code-input" spellcheck="false">
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  input { padding: 10px; width: 100%; box-sizing: border-box; margin-bottom: 10px; border: 2px solid #ccc; }
+  .error { border-color: red !important; }
+</style>
+</head>
+<body>
+
+<h3>Registration Form</h3>
+<form onsubmit="return validateForm()">
+    
+    <label>Full Name (Focus to Highlight):</label>
+    <input type="text" onfocus="this.style.borderColor='blue'" onblur="this.style.borderColor='#ccc'" placeholder="Apna naam likhein">
+
+    <label>Email (Blur to Check):</label>
+    <input type="text" id="email" onblur="checkEmail(this)" placeholder="test@mail.com">
+
+    <label>Password:</label>
+    <input type="password" id="pass" placeholder="Password zaruri hai">
+
+    <input type="submit" value="Submit Data" style="background: #1e293b; color: white; cursor: pointer;">
+</form>
+
+<script>
+    function checkEmail(el) {
+        if(!el.value.includes('@')) {
+            el.classList.add('error');
+            alert('Galti: Sahi Email likhein!');
+        } else {
+            el.classList.remove('error');
+        }
+    }
+
+    function validateForm() {
+        var p = document.getElementById('pass').value;
+        if(p == "") {
+            alert("Rukiye! Password khali nahi ho sakta.");
+            return false; // Form submit nahi hoga
+        }
+        alert("Success! Data server par bhej diya gaya.");
+        return true;
+    }
+</script>
+
+</body>
+</html>
+                </textarea>
+
+                <div class="output-label">OUTPUT (Result)</div>
+                <iframe class="code-output"></iframe>
+            </div>
+
+            <div style="background: #1e293b; color: #fff; padding: 20px; border-radius: 12px; margin-top: 30px;">
+                <h3 style="color: white; margin-bottom: 15px;">💡 Summary Table</h3>
+                
+                <table style="width: 100%; color: #fff; background: transparent; box-shadow: none; border: none;">
+                    <thead style="background: rgba(255,255,255,0.1);">
+                        <tr>
+                            <th style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.2); background: transparent; color: #fff;">Event</th>
+                            <th style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.2); background: transparent; color: #fff;">Kab hota hai?</th>
+                            <th style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.2); background: transparent; color: #fff;">Best Use Case</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.1);">onfocus</td>
+                            <td style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.1);">Cursor andar aate hi.</td>
+                            <td style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.1);">Highlighting (Visual cue).</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.1);">onblur</td>
+                            <td style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.1);">Cursor jate hi.</td>
+                            <td style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.1);">Validation (Errors check karna).</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.1);">onchange</td>
+                            <td style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.1);">Value badalne par.</td>
+                            <td style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.1);">Dropdowns, Calculations.</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.1);">onsubmit</td>
+                            <td style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.1);">Submit dabane par.</td>
+                            <td style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.1);">Final check (Submission blocking).</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="chapter-nav">
+    <a href="ch29_window_events.html" class="btn secondary">&larr; Prev</a>
+
+    <a href="ch31_hardware_events.html" class="btn">Next &rarr;</a>
+</div>
+        </main>
+    </div>
+
+    <script src="../script.js"></script>
+
+</body>
+</html>

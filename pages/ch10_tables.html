@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 10: HTML Tables | Ashish Lab</title>
+    
+    <link rel="stylesheet" href="../style.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Fira+Code&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">
+            <a href="../index.html"><i class="fa-brands fa-html5"></i> Ashish<span>Lab</span></a>
+        </div>
+        <div class="menu-toggle" id="mobile-menu">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+        <ul class="nav-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="ch11_lists.html" class="btn">Next Chapter <i class="fa-solid fa-arrow-right"></i></a></li>
+        </ul>
+    </nav>
+
+    <div class="chapter-layout">
+        
+        <aside class="sidebar">
+            <h3>Course Index</h3>
+            <ul style="max-height: 70vh; overflow-y: auto; padding-right: 5px;">
+                <li><a href="ch1_intro.html"><i class="fa-solid fa-check"></i> Ch 1: Overview</a></li>
+                <li><a href="ch2_basic_tags.html"><i class="fa-solid fa-check"></i> Ch 2: Basic Tags</a></li>
+                <li><a href="ch3_elements.html"><i class="fa-solid fa-check"></i> Ch 3: Elements</a></li>
+                <li><a href="ch4_attributes.html"><i class="fa-solid fa-check"></i> Ch 4: Attributes</a></li>
+                <li><a href="ch5_formatting.html"><i class="fa-solid fa-check"></i> Ch 5: Formatting</a></li>
+                <li><a href="ch6_phrase_tags.html"><i class="fa-solid fa-check"></i> Ch 6: Phrase Tags</a></li>
+                <li><a href="ch7_meta_tags.html"><i class="fa-solid fa-check"></i> Ch 7: Meta Tags</a></li>
+                <li><a href="ch8_comments.html"><i class="fa-solid fa-check"></i> Ch 8: Comments</a></li>
+                <li><a href="ch9_images.html"><i class="fa-solid fa-check"></i> Ch 9: Images</a></li>
+                <li><a href="ch10_tables.html" class="active"><i class="fa-solid fa-circle-check"></i> Ch 10: Tables</a></li>
+                <li><a href="ch11_lists.html">Ch 11: Lists</a></li>
+                <li><a href="ch12_text_links.html">Ch 12: Text Links</a></li>
+                <li><a href="ch13_image_links.html">Ch 13: Image Maps</a></li>
+                <li><a href="ch14_email_links.html">Ch 14: Email Links</a></li>
+                <li><a href="ch15_frames.html">Ch 15: Frames</a></li>
+                <li><a href="ch16_iframes.html">Ch 16: Iframes</a></li>
+                <li><a href="ch17_blocks.html">Ch 17: Div & Span</a></li>
+                <li><a href="ch18_backgrounds.html">Ch 18: Backgrounds</a></li>
+                <li><a href="ch19_colors.html">Ch 19: Color Models</a></li>
+                <li><a href="ch20_fonts.html">Ch 20: Fonts</a></li>
+                <li><a href="ch21_forms.html">Ch 21: Forms</a></li>
+                <li><a href="ch22_multimedia.html">Ch 22: Multimedia</a></li>
+                <li><a href="ch23_marquee.html">Ch 23: Marquee</a></li>
+                <li><a href="ch24_header.html">Ch 24: Header Tags</a></li>
+                <li><a href="ch25_css.html">Ch 25: CSS Setup</a></li>
+                <li><a href="ch26_javascript.html">Ch 26: JavaScript</a></li>
+                <li><a href="ch27_layout.html">Ch 27: Layouts</a></li>
+                <li><a href="ch28_mouse_events.html">Ch 28: Mouse Events</a></li>
+                <li><a href="ch29_window_events.html">Ch 29: Window Events</a></li>
+                <li><a href="ch30_form_events.html">Ch 30: Form Events</a></li>
+                <li><a href="ch31_hardware_events.html">Ch 31: Hardware</a></li>
+                <li><a href="ch32_entities.html">Ch 32: Entities</a></li>
+                <li><a href="ch33_url_encoding.html">Ch 33: URL Encode</a></li>
+                <li><a href="ch34_lang_codes.html">Ch 34: Lang Codes</a></li>
+                <li><a href="ch35_char_sets.html">Ch 35: Char Sets</a></li>
+                <li><a href="ch36_http_status.html">Ch 36: HTTP Status</a></li>
+                <li><a href="ch37_mime_types.html">Ch 37: MIME Types</a></li>
+                <li><a href="ch38_deprecated.html">Ch 38: Deprecated</a></li>
+            </ul>
+        </aside>
+
+        <main class="content-area">
+            
+            <h1>📊 Chapter 10: HTML Tables</h1>
+            <p>HTML Table ek <strong>grid</strong> ki tarah hoti hai jisme data cells ke andar rakha jata hai (Row aur Column format mein).</p>
+            
+            <hr style="margin: 2rem 0; border: 0; border-top: 1px solid #eee;">
+
+            <h2>1. Basic Structure (Buniyadi Dhancha)</h2>
+            <p>Ek table banane ke liye humein in char main tags ki zaroorat hoti hai:</p>
+            
+            <ul style="list-style: none; padding: 0;">
+                <li style="margin-bottom: 10px;"><strong>&lt;table&gt;:</strong> Main container tag jo table shuru karta hai.</li>
+                <li style="margin-bottom: 10px;"><strong>&lt;tr&gt; (Table Row):</strong> Table ki ek horizontal line (row) banata hai.</li>
+                <li style="margin-bottom: 10px;"><strong>&lt;th&gt; (Table Heading):</strong> Column ka naam dene ke liye. Ye text by default <strong>Bold</strong> aur <strong>Center</strong> hota hai.</li>
+                <li style="margin-bottom: 10px;"><strong>&lt;td&gt; (Table Data):</strong> Row ke andar ki cells jahan asli jankari likhi jati hai.</li>
+            </ul>
+            
+            
+
+            <div style="background: #1e293b; color: #e2e8f0; padding: 15px; border-radius: 8px; font-family: 'Fira Code', monospace;">
+&lt;table border="1"&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Roll No&lt;/th&gt;
+    &lt;th&gt;Name&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;101&lt;/td&gt;
+    &lt;td&gt;Nilima&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+            </div>
+
+            <h2>2. Complex Layouts: Merging</h2>
+            <p>Kabhi-kabhi humein do cells ko ek banana padta hai. Ise <strong>Merging</strong> kehte hain.</p>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 15px;">
+                <div style="background: #f8fafc; padding: 15px; border-radius: 8px; border: 1px solid #e2e8f0;">
+                    <h4 style="color: var(--primary);">colspan</h4>
+                    <p>Do ya zyada <strong>columns</strong> ko ek karne ke liye (Horizontal merge).</p>
+                </div>
+                <div style="background: #f8fafc; padding: 15px; border-radius: 8px; border: 1px solid #e2e8f0;">
+                    <h4 style="color: var(--primary);">rowspan</h4>
+                    <p>Do ya zyada <strong>rows</strong> ko ek karne ke liye (Vertical merge).</p>
+                </div>
+            </div>
+
+            <h2>3. Spacing Attributes</h2>
+            <p>Ye attributes table ke andar ki khali jagah (white space) ko control karte hain:</p>
+            <ul>
+                <li><strong>cellpadding:</strong> Content aur border ke beech ki doori.</li>
+                <li><strong>cellspacing:</strong> Do cells (baksom) ke beech ki doori.</li>
+            </ul>
+
+            <h2>4. Semantic Sections</h2>
+            <p>Badi tables ko manage karne ke liye hum unhe teen hisson mein baant sakte hain:</p>
+            <ul>
+                <li><code>&lt;thead&gt;</code>: Heading wala hissa.</li>
+                <li><code>&lt;tbody&gt;</code>: Main data wala hissa.</li>
+                <li><code>&lt;tfoot&gt;</code>: Summary ya total wala hissa (sabse niche).</li>
+            </ul>
+
+            <h2>5. Styling: Background & Captions</h2>
+            <p>Aap table ko sundar banane ke liye in attributes ka use kar sakte hain:</p>
+            <ul>
+                <li><strong>caption:</strong> Table ka title dene ke liye (Table ke upar dikhta hai).</li>
+                <li><strong>bgcolor:</strong> Background color set karne ke liye.</li>
+            </ul>
+
+            <h2 style="margin-top: 3rem; color: var(--primary);">📝 Practice Exercise: Complete Timetable</h2>
+            <p>Niche ek complete <strong>Study Timetable</strong> hai jisme Merging, Colors aur Spacing sab use kiya gaya hai. Ise <strong>Run</strong> karein!</p>
+
+            <div class="live-editor">
+                <div class="editor-header">
+                    <span><i class="fa-solid fa-code"></i> Live Practice</span>
+                    <div class="editor-controls">
+                        <button class="btn-copy" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Copy</button>
+                        <button class="btn-run" onclick="runCode(this)"><i class="fa-solid fa-play"></i> Run</button>
+                    </div>
+                </div>
+                
+                <textarea class="code-input" spellcheck="false">
+<!DOCTYPE html>
+<html>
+<body>
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+    <caption style="font-weight: bold; margin-bottom: 10px;">My Study Timetable</caption>
+    
+    <thead bgcolor="#4f46e5" style="color: white;">
+        <tr>
+            <th>Day</th>
+            <th>09:00 AM</th>
+            <th>11:00 AM</th>
+            <th>02:00 PM</th>
+        </tr>
+    </thead>
+
+    <tbody align="center">
+        <tr>
+            <td bgcolor="#f3f4f6"><b>Monday</b></td>
+            <td>HTML Deep Dive</td>
+            <td>Python</td>
+            <td rowspan="2" bgcolor="#fee2e2">Project Work<br>(Merged Row)</td>
+        </tr>
+        <tr>
+            <td bgcolor="#f3f4f6"><b>Tuesday</b></td>
+            <td>Maths</td>
+            <td>C++</td>
+        </tr>
+        <tr>
+            <td bgcolor="#f3f4f6"><b>Wednesday</b></td>
+            <td colspan="2" bgcolor="#d1fae5">English & Java (Merged Col)</td>
+            <td>Rest</td>
+        </tr>
+    </tbody>
+
+    <tfoot bgcolor="#1e293b" style="color: white;">
+        <tr>
+            <td colspan="4" align="center">All classes are mandatory.</td>
+        </tr>
+    </tfoot>
+</table>
+
+</body>
+</html>
+                </textarea>
+
+                <div class="output-label">OUTPUT (Result)</div>
+                <iframe class="code-output"></iframe>
+            </div>
+
+            <div style="background: #1e293b; color: #fff; padding: 20px; border-radius: 12px; margin-top: 30px;">
+                <h3 style="color: white; margin-bottom: 15px;">💡 Summary Table</h3>
+                <table style="width: 100%; color: #fff;" border="1" cellpadding="10" cellspacing="0">
+                    <thead style="background: rgba(255,255,255,0.1);">
+                        <tr>
+                            <th>Tag/Attribute</th>
+                            <th>Purpose</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>&lt;table&gt;</td><td>Table shuru karne ke liye.</td></tr>
+                        <tr><td>&lt;tr&gt;</td><td>Row banane ke liye.</td></tr>
+                        <tr><td>colspan</td><td>Columns ko merge karna.</td></tr>
+                        <tr><td>rowspan</td><td>Rows ko merge karna.</td></tr>
+                        <tr><td>cellpadding</td><td>Content aur border ke beech gap.</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+           <div class="chapter-nav">
+    <a href="ch9_images.html" class="btn secondary">&larr; Prev</a>
+
+    <a href="ch11_lists.html" class="btn">Next &rarr;</a>
+</div>
+
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Ashish Code Lab. Made with ❤️ in Mau, UP.</p>
+    </footer>
+
+    <script src="../script.js"></script>
+
+</body>
+</html>

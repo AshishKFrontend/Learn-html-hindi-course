@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="hi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 5: Formatting | Ashish Lab</title>
+
+    <link rel="stylesheet" href="../style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Fira+Code&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="logo">
+            <a href="../index.html"><i class="fa-brands fa-html5"></i> Ashish<span>Lab</span></a>
+        </div>
+        <div class="menu-toggle" id="mobile-menu">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+        <ul class="nav-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="ch6_phrase_tags.html" class="btn">Next Chapter <i class="fa-solid fa-arrow-right"></i></a></li>
+        </ul>
+    </nav>
+
+    <div class="chapter-layout">
+
+        <aside class="sidebar">
+            <h3>Course Index</h3>
+            <ul style="max-height: 70vh; overflow-y: auto; padding-right: 5px;">
+                <li><a href="ch1_intro.html"><i class="fa-solid fa-check"></i> Ch 1: Overview</a></li>
+                <li><a href="ch2_basic_tags.html"><i class="fa-solid fa-check"></i> Ch 2: Basic Tags</a></li>
+                <li><a href="ch3_elements.html"><i class="fa-solid fa-check"></i> Ch 3: Elements</a></li>
+                <li><a href="ch4_attributes.html"><i class="fa-solid fa-check"></i> Ch 4: Attributes</a></li>
+                <li><a href="ch5_formatting.html" class="active"><i class="fa-solid fa-circle-check"></i> Ch 5:
+                        Formatting</a></li>
+                <li><a href="ch6_phrase_tags.html">Ch 6: Phrase Tags</a></li>
+                <li><a href="ch7_meta_tags.html">Ch 7: Meta Tags</a></li>
+                <li><a href="ch8_comments.html">Ch 8: Comments</a></li>
+                <li><a href="ch9_images.html">Ch 9: Images</a></li>
+                <li><a href="ch10_tables.html">Ch 10: Tables</a></li>
+                <li><a href="ch11_lists.html">Ch 11: Lists</a></li>
+                <li><a href="ch12_text_links.html">Ch 12: Text Links</a></li>
+                <li><a href="ch13_image_links.html">Ch 13: Image Maps</a></li>
+                <li><a href="ch14_email_links.html">Ch 14: Email Links</a></li>
+                <li><a href="ch15_frames.html">Ch 15: Frames</a></li>
+                <li><a href="ch16_iframes.html">Ch 16: Iframes</a></li>
+                <li><a href="ch17_blocks.html">Ch 17: Div & Span</a></li>
+                <li><a href="ch18_backgrounds.html">Ch 18: Backgrounds</a></li>
+                <li><a href="ch19_colors.html">Ch 19: Color Models</a></li>
+                <li><a href="ch20_fonts.html">Ch 20: Fonts</a></li>
+                <li><a href="ch21_forms.html">Ch 21: Forms</a></li>
+                <li><a href="ch22_multimedia.html">Ch 22: Multimedia</a></li>
+                <li><a href="ch23_marquee.html">Ch 23: Marquee</a></li>
+                <li><a href="ch24_header.html">Ch 24: Header Tags</a></li>
+                <li><a href="ch25_css.html">Ch 25: CSS Setup</a></li>
+                <li><a href="ch26_javascript.html">Ch 26: JavaScript</a></li>
+                <li><a href="ch27_layout.html">Ch 27: Layouts</a></li>
+                <li><a href="ch28_mouse_events.html">Ch 28: Mouse Events</a></li>
+                <li><a href="ch29_window_events.html">Ch 29: Window Events</a></li>
+                <li><a href="ch30_form_events.html">Ch 30: Form Events</a></li>
+                <li><a href="ch31_hardware_events.html">Ch 31: Hardware</a></li>
+                <li><a href="ch32_entities.html">Ch 32: Entities</a></li>
+                <li><a href="ch33_url_encoding.html">Ch 33: URL Encode</a></li>
+                <li><a href="ch34_lang_codes.html">Ch 34: Lang Codes</a></li>
+                <li><a href="ch35_char_sets.html">Ch 35: Char Sets</a></li>
+                <li><a href="ch36_http_status.html">Ch 36: HTTP Status</a></li>
+                <li><a href="ch37_mime_types.html">Ch 37: MIME Types</a></li>
+                <li><a href="ch38_deprecated.html">Ch 38: Deprecated</a></li>
+            </ul>
+        </aside>
+
+        <main class="content-area">
+
+            <h1>🎨 Chapter 5: HTML Formatting</h1>
+            <p>HTML mein text ko sajaane ke liye kai tarah ke tags hote hain. Inhe hum do hisson mein baant sakte hain:
+                <strong>Physical tags</strong> (jo sirf dikhne mein badlav karte hain) aur <strong>Semantic
+                    tags</strong> (jinka koi matlab hota hai).</p>
+
+            <hr style="margin: 2rem 0; border: 0; border-top: 1px solid #eee;">
+
+            <h2>1. Physical Style Tags</h2>
+            <p>Ye tags text ka look turant badal dete hain.</p>
+
+            <ul style="list-style: none; padding: 0;">
+                <li style="margin-bottom: 10px;"><b>&lt;b&gt; (Bold):</b> Text ko mota (dark) dikhane ke liye.</li>
+                <li style="margin-bottom: 10px;"><i>&lt;i&gt; (Italic):</i> Text ko thoda tircha dikhane ke liye.</li>
+                <li style="margin-bottom: 10px;"><u>&lt;u&gt; (Underline):</u> Text ke niche ek line khinchne ke liye.
+                </li>
+            </ul>
+
+            <div
+                style="background: #1e293b; color: #e2e8f0; padding: 15px; border-radius: 8px; font-family: 'Fira Code', monospace; margin-top: 15px;">
+                &lt;p&gt;Ye ek &lt;b&gt;Bold Text&lt;/b&gt; hai.&lt;/p&gt;
+                &lt;p&gt;Ye ek &lt;i&gt;Italic Text&lt;/i&gt; hai.&lt;/p&gt;
+                &lt;p&gt;Ye ek &lt;u&gt;Underlined Text&lt;/u&gt; hai.&lt;/p&gt;
+            </div>
+
+            <h2>2. Strike-through (Kati hui line)</h2>
+            <p>Jab aapko dikhana ho ki koi cheez ab sahi nahi hai ya purani ho chuki hai, toh text ke beech mein se ek
+                line guzaari jati hai.</p>
+            <p><strong>Tags:</strong> <code>&lt;strike&gt;</code> aur <code>&lt;s&gt;</code> (Dono ka kaam ek hi hai -
+                text ko "kaat" dena).</p>
+
+            <div
+                style="background: #1e293b; color: #e2e8f0; padding: 15px; border-radius: 8px; font-family: 'Fira Code', monospace;">
+                &lt;p&gt;Purani Price: &lt;strike&gt;Rs. 500&lt;/strike&gt;&lt;/p&gt;
+                &lt;p&gt;Nayi Price: Rs. 299&lt;/p&gt;
+            </div>
+
+            <h2>3. Subscript aur Superscript</h2>
+            <p>Ye tags math aur science ke formulas likhne ke kaam aate hain.</p>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 15px;">
+                <div style="background: #f8fafc; padding: 15px; border-radius: 8px; border: 1px solid #e2e8f0;">
+                    <h4 style="color: var(--primary);"><sub>sub</sub> (Subscript)</h4>
+                    <p>Text ko normal line se thoda <strong>niche</strong> aur chhota dikhata hai.</p>
+                    <code>H<sub>2</sub>O</code>
+                </div>
+                <div style="background: #f8fafc; padding: 15px; border-radius: 8px; border: 1px solid #e2e8f0;">
+                    <h4 style="color: var(--primary);"><sup>sup</sup> (Superscript)</h4>
+                    <p>Text ko normal line se thoda <strong>upar</strong> aur chhota dikhata hai.</p>
+                    <code>X<sup>2</sup></code>
+                </div>
+            </div>
+
+            <h2>4. Text Modification (Ins aur Del)</h2>
+            <p>Ye tags editing ke liye use hote hain.</p>
+            <ul>
+                <li><strong>&lt;del&gt; (Deleted):</strong> Dikhata hai ki text delete kiya gaya hai (strikethrough
+                    jaisa).</li>
+                <li><strong>&lt;ins&gt; (Inserted):</strong> Dikhata hai ki naya text add kiya gaya hai (underline
+                    jaisa).</li>
+            </ul>
+
+            <div
+                style="background: #1e293b; color: #e2e8f0; padding: 15px; border-radius: 8px; font-family: 'Fira Code', monospace;">
+                &lt;p&gt;Mera pasandida rang &lt;del&gt;Laal&lt;/del&gt; &lt;ins&gt;Neela&lt;/ins&gt; hai.&lt;/p&gt;
+            </div>
+
+            <h2 style="margin-top: 3rem; color: var(--primary);">📝 Practice Exercise: Sabhi Formatting ka Mix</h2>
+            <p>Is code mein Receipt, Chemical Formula aur Math Problem hai. Ise <strong>Run</strong> karke output
+                dekhein!</p>
+
+            <div class="live-editor">
+                <div class="editor-header">
+                    <span><i class="fa-solid fa-code"></i> Live Practice</span>
+                    <div class="editor-controls">
+                        <button class="btn-copy" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i>
+                            Copy</button>
+                        <button class="btn-run" onclick="runCode(this)"><i class="fa-solid fa-play"></i> Run</button>
+                    </div>
+                </div>
+
+                <textarea class="code-input" spellcheck="false">
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Shopping Receipt</h1>
+<hr>
+<p>Item: <b>Gaming Mouse</b></p>
+<p>Original Price: <s>Rs. 1500</s></p>
+<p>Offer Price: <u><b>Rs. 999</b></u></p>
+
+<h3>Chemical Reaction</h3>
+<p>Jab 2H<sub>2</sub> aur O<sub>2</sub> milte hain, toh 2H<sub>2</sub>O banta hai.</p>
+
+<h3>Math Problem</h3>
+<p>Solve: x<sup>3</sup> + y<sup>2</sup> = 100</p>
+
+<hr>
+<p>Status: <del>Out of Stock</del> <ins>Available Now</ins></p>
+
+</body>
+</html>
+                </textarea>
+
+                <div class="output-label">OUTPUT (Result)</div>
+                <iframe class="code-output"></iframe>
+            </div>
+
+            <div style="background: #1e293b; color: #fff; padding: 20px; border-radius: 12px; margin-top: 30px;">
+                <h3 style="color: white; margin-bottom: 15px;">💡 Summary Table</h3>
+                <table style="width: 100%; color: #fff;">
+                    <thead style="background: rgba(255,255,255,0.1);">
+                        <tr>
+                            <th style="padding: 10px;">Tag</th>
+                            <th style="padding: 10px;">Purpose</th>
+                            <th style="padding: 10px;">Output Example</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>&lt;b&gt;</td>
+                            <td>Bold Text</td>
+                            <td><b>Bold</b></td>
+                        </tr>
+                        <tr>
+                            <td>&lt;i&gt;</td>
+                            <td>Italic Text</td>
+                            <td><i>Italic</i></td>
+                        </tr>
+                        <tr>
+                            <td>&lt;u&gt;</td>
+                            <td>Underline</td>
+                            <td><u>Underline</u></td>
+                        </tr>
+                        <tr>
+                            <td>&lt;s&gt;</td>
+                            <td>Strike-through</td>
+                            <td><s>Text</s></td>
+                        </tr>
+                        <tr>
+                            <td>&lt;sub&gt;</td>
+                            <td>Subscript</td>
+                            <td>H<sub>2</sub></td>
+                        </tr>
+                        <tr>
+                            <td>&lt;sup&gt;</td>
+                            <td>Superscript</td>
+                            <td>X<sup>2</sup></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="chapter-nav">
+                <a href="ch4_attributes.html" class="btn secondary">&larr; Prev</a>
+
+                <a href="ch6_phrase_tags.html" class="btn">Next &rarr;</a>
+            </div>
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Ashish Code Lab. Made with ❤️ in Mau, UP.</p>
+    </footer>
+
+    <script src="../script.js"></script>
+
+</body>
+
+</html>

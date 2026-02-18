@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 22: Multimedia (Video/Audio) | Ashish Lab</title>
+    
+    <link rel="stylesheet" href="../style.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Fira+Code&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">
+            <a href="../index.html"><i class="fa-brands fa-html5"></i> Ashish<span>Lab</span></a>
+        </div>
+        <div class="menu-toggle" id="mobile-menu">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+        <ul class="nav-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="ch23_marquee.html" class="btn">Next Chapter <i class="fa-solid fa-arrow-right"></i></a></li>
+        </ul>
+    </nav>
+
+    <div class="chapter-layout">
+        
+        <aside class="sidebar">
+            <h3>Course Index</h3>
+            <ul style="max-height: 70vh; overflow-y: auto; padding-right: 5px;">
+                <li><a href="ch1_intro.html"><i class="fa-solid fa-check"></i> Ch 1: Overview</a></li>
+                <li><a href="ch2_basic_tags.html"><i class="fa-solid fa-check"></i> Ch 2: Basic Tags</a></li>
+                <li><a href="ch3_elements.html"><i class="fa-solid fa-check"></i> Ch 3: Elements</a></li>
+                <li><a href="ch4_attributes.html"><i class="fa-solid fa-check"></i> Ch 4: Attributes</a></li>
+                <li><a href="ch5_formatting.html"><i class="fa-solid fa-check"></i> Ch 5: Formatting</a></li>
+                <li><a href="ch6_phrase_tags.html"><i class="fa-solid fa-check"></i> Ch 6: Phrase Tags</a></li>
+                <li><a href="ch7_meta_tags.html"><i class="fa-solid fa-check"></i> Ch 7: Meta Tags</a></li>
+                <li><a href="ch8_comments.html"><i class="fa-solid fa-check"></i> Ch 8: Comments</a></li>
+                <li><a href="ch9_images.html"><i class="fa-solid fa-check"></i> Ch 9: Images</a></li>
+                <li><a href="ch10_tables.html"><i class="fa-solid fa-check"></i> Ch 10: Tables</a></li>
+                <li><a href="ch11_lists.html"><i class="fa-solid fa-check"></i> Ch 11: Lists</a></li>
+                <li><a href="ch12_text_links.html"><i class="fa-solid fa-check"></i> Ch 12: Text Links</a></li>
+                <li><a href="ch13_image_links.html"><i class="fa-solid fa-check"></i> Ch 13: Image Maps</a></li>
+                <li><a href="ch14_email_links.html"><i class="fa-solid fa-check"></i> Ch 14: Email Links</a></li>
+                <li><a href="ch15_frames.html"><i class="fa-solid fa-check"></i> Ch 15: Frames</a></li>
+                <li><a href="ch16_iframes.html"><i class="fa-solid fa-check"></i> Ch 16: Iframes</a></li>
+                <li><a href="ch17_blocks.html"><i class="fa-solid fa-check"></i> Ch 17: Div & Span</a></li>
+                <li><a href="ch18_backgrounds.html"><i class="fa-solid fa-check"></i> Ch 18: Backgrounds</a></li>
+                <li><a href="ch19_colors.html"><i class="fa-solid fa-check"></i> Ch 19: Color Models</a></li>
+                <li><a href="ch20_fonts.html"><i class="fa-solid fa-check"></i> Ch 20: Fonts</a></li>
+                <li><a href="ch21_forms.html"><i class="fa-solid fa-check"></i> Ch 21: Forms</a></li>
+                <li><a href="ch22_multimedia.html" class="active"><i class="fa-solid fa-circle-check"></i> Ch 22: Multimedia</a></li>
+                <li><a href="ch23_marquee.html">Ch 23: Marquee</a></li>
+                <li><a href="ch24_header.html">Ch 24: Header Tags</a></li>
+                <li><a href="ch25_css.html">Ch 25: CSS Setup</a></li>
+                <li><a href="ch26_javascript.html">Ch 26: JavaScript</a></li>
+                <li><a href="ch27_layout.html">Ch 27: Layouts</a></li>
+                <li><a href="ch28_mouse_events.html">Ch 28: Mouse Events</a></li>
+                <li><a href="ch29_window_events.html">Ch 29: Window Events</a></li>
+                <li><a href="ch30_form_events.html">Ch 30: Form Events</a></li>
+                <li><a href="ch31_hardware_events.html">Ch 31: Hardware</a></li>
+                <li><a href="ch32_entities.html">Ch 32: Entities</a></li>
+                <li><a href="ch33_url_encoding.html">Ch 33: URL Encode</a></li>
+                <li><a href="ch34_lang_codes.html">Ch 34: Lang Codes</a></li>
+                <li><a href="ch35_char_sets.html">Ch 35: Char Sets</a></li>
+                <li><a href="ch36_http_status.html">Ch 36: HTTP Status</a></li>
+                <li><a href="ch37_mime_types.html">Ch 37: MIME Types</a></li>
+                <li><a href="ch38_deprecated.html">Ch 38: Deprecated</a></li>
+            </ul>
+        </aside>
+
+        <main class="content-area">
+            
+            <h1>🎥 Chapter 22: Multimedia</h1>
+            <p>HTML5 ke aane se pehle video/audio ke liye extra plugins (jaise Flash Player) chahiye hote the, par ab <code>&lt;video&gt;</code> aur <code>&lt;audio&gt;</code> tags sabse powerful hain.</p>
+            
+            <hr style="margin: 2rem 0; border: 0; border-top: 1px solid #eee;">
+
+            <h2>1. Video Tag: Har Attribute ka Post-mortem</h2>
+            <p>Video dikhane ke liye sirf tag likhna kaafi nahi hai, uske attributes use control karte hain:</p>
+            
+            <ul style="list-style: none; padding: 0;">
+                <li style="margin-bottom: 10px;"><strong>src:</strong> Video file ka path (URL).</li>
+                <li style="margin-bottom: 10px;"><strong>controls:</strong> Iske bina user video play nahi kar payega (Play, Volume, Fullscreen buttons gayab rahenge).</li>
+                <li style="margin-bottom: 10px;"><strong>muted:</strong> Video ki awaaz band rakhta hai.</li>
+                <li style="margin-bottom: 10px;"><strong>poster:</strong> Jab tak video load ho rahi hai, ek image (thumbnail) dikhane ke liye.</li>
+                <li style="margin-bottom: 10px;"><strong>loop:</strong> Video khatam hote hi dobara shuru ho jayegi.</li>
+            </ul>
+
+            <div class="note-box" style="background: #fffbeb; border-left: 5px solid #f59e0b;">
+                <p><strong>⚠️ Autoplay Policy:</strong> Google Chrome aur modern browsers ki policy hai ki <code>autoplay</code> tabhi kaam karega jab video <code>muted</code> ho. (Bina awaaz ke hi auto-play allowed hai).</p>
+            </div>
+
+            <div style="background: #1e293b; color: #e2e8f0; padding: 15px; border-radius: 8px; font-family: 'Fira Code', monospace; margin-top: 15px;">
+&lt;video src="movie.mp4" controls width="400" poster="thumb.jpg"&gt;
+   Aapka browser video support nahi karta.
+&lt;/video&gt;
+            </div>
+
+            <h2>2. Audio Tag: Deep Control</h2>
+            <p>Audio tag bhi lagbhag video jaisa hi hai par isme koi screen nahi hoti.</p>
+            <ul>
+                <li><strong>controls:</strong> Player interface dikhane ke liye zaroori hai.</li>
+                <li><strong>autoplay / muted / loop:</strong> Same as video.</li>
+            </ul>
+
+            <div style="background: #1e293b; color: #e2e8f0; padding: 15px; border-radius: 8px; font-family: 'Fira Code', monospace;">
+&lt;audio src="song.mp3" controls loop&gt;
+   Audio file support nahi hai.
+&lt;/audio&gt;
+            </div>
+
+            <h2 style="margin-top: 3rem; color: var(--primary);">📝 Live Practice: Video & Audio</h2>
+            <p>Niche ek Sample Video aur Audio hai. <strong>Run</strong> karein aur Play button dabayein.</p>
+
+            <div class="live-editor">
+                <div class="editor-header">
+                    <span><i class="fa-solid fa-code"></i> Live Practice</span>
+                    <div class="editor-controls">
+                        <button class="btn-copy" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Copy</button>
+                        <button class="btn-run" onclick="runCode(this)"><i class="fa-solid fa-play"></i> Run</button>
+                    </div>
+                </div>
+                
+                <textarea class="code-input" spellcheck="false">
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>1. Video Example (Working)</h2>
+<p>Isme poster aur controls sahi se kaam karenge.</p>
+
+<video width="500px" controls poster="https://plus.unsplash.com/premium_photo-1711217237364-827b31b57e92?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDc0fGJvOGpRS1RhRTBZfHxlbnwwfHx8fHw%3D">
+  <source src="https://www.pexels.com/download/video/34765883/" type="video/mp4">
+  Your browser does not support HTML5 video.
+</video>
+
+
+<hr>
+
+<h2>2. Audio Example</h2>
+<p>Isme Loop laga hai (Khatam hone par fir chalega).</p>
+
+<audio controls loop style="width: 100%;">
+  <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+</body>
+</html>
+                </textarea>
+
+                <div class="output-label">OUTPUT (Result)</div>
+                <iframe class="code-output"></iframe>
+            </div>
+
+            <div style="background: #1e293b; color: #fff; padding: 20px; border-radius: 12px; margin-top: 30px;">
+                <h3 style="color: white; margin-bottom: 15px;">💡 Summary Table</h3>
+                
+                <table style="width: 100%; color: #fff; background: transparent; box-shadow: none; border: none;">
+                    <thead style="background: rgba(255,255,255,0.1);">
+                        <tr>
+                            <th style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.2); background: transparent; color: #fff;">Attribute</th>
+                            <th style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.2); background: transparent; color: #fff;">Purpose</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.1);"><code>controls</code></td>
+                            <td style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.1);">Play/Pause buttons dikhana (Zaroori hai).</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.1);"><code>autoplay</code></td>
+                            <td style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.1);">Load hote hi chalna (Needs <code>muted</code>).</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.1);"><code>loop</code></td>
+                            <td style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.1);">Video repeat karna.</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.1);"><code>poster</code></td>
+                            <td style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.1);">Video shuru hone se pehle Thumbnail.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="chapter-nav">
+    <a href="ch21_forms.html" class="btn secondary">&larr; Prev</a>
+
+    <a href="ch23_marquee.html" class="btn">Next &rarr;</a>
+</div>
+
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Ashish Code Lab. Made with ❤️ in Mau, UP.</p>
+    </footer>
+
+    <script src="../script.js"></script>
+
+</body>
+</html>
